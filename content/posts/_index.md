@@ -7,4 +7,4 @@ title: posts/
 
 some real life stuff, some tech focused, no reinvention of the wheel to find here
 
-figured explaining it to myself strengthens the core concept of "[learning](https://en.wikipedia.org/wiki/Learning)"
+figured explaining difficult topics to myself strengthens the core concept of learning

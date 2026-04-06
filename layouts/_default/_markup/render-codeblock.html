@@ -1,0 +1,13 @@
+{{- $lang := .Type -}}
+{{- $opts := dict "lineNos" "table" "noClasses" false -}}
+{{- $hl := transform.Highlight .Inner $lang $opts -}}
+<div class="code-block-wrap">
+  {{- with $lang -}}
+  <div class="code-block-header">
+    <span class="code-block-lang">{{ . }}</span>
+  </div>
+  {{- end -}}
+  <div class="code-block-inner">
+    {{ $hl | safeHTML }}
+  </div>
+</div>

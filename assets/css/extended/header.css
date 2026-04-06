@@ -1,0 +1,7 @@
+header.header .nav #menu {
+  justify-content: right;
+}
+
+header.header {
+  background-color: var(--entry);
+}

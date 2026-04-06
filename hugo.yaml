@@ -1,0 +1,76 @@
+baseUrl: 'https://localhost:1313/'
+languageCode: en-us
+title: vah
+theme: paper-mod
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowReadingTime: true
+  ShowBreadCrumbs: false
+  ShowToc: true
+
+  mainSections:
+    - posts
+
+  assets:
+    favicon: fingerprint-smooth.svg
+    disableHLJS: true
+
+  homeInfoParams:
+    Title: ~ boo ~
+    Content: >-
+      presumably interested in anything that comes to my mind — writeups,
+
+      various posts, and whatever else ends up in here
+
+
+      **not a good programmer by any means**
+
+
+      *no ads, no tracking*
+
+  socialIcons:
+    - name: steam
+      url: 'https://steamcommunity.com/id/hanf'
+      tooltip: id/hanf
+
+    - name: github
+      url: 'https://github.com/vahrina'
+      tooltip: vahrina
+
+    - name: portfolio
+      url: 'https://who.vah.wtf'
+
+markup:
+  highlight:
+    lineNoStart: 0
+
+  goldmark:
+    renderer:
+      unsafe: true
+
+menu:
+  main:
+    - name: posts/
+      url: /posts/
+      weight: 1
+
+    - name: repo/
+      url: 'https://github.com/vahrina/dat'
+      weight: 2
+
+    - name: log/
+      url: /search/
+      weight: 3
+
+    - name: docs/
+      url: /help/
+      weight: 4
+

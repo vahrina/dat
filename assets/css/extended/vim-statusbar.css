@@ -1,0 +1,84 @@
+:root {
+  --vimbar-height: 4vh;
+}
+
+body.has-vimbar {
+  padding-bottom: var(--vimbar-height);
+}
+
+body.has-vimbar #top-link {
+  bottom: calc(var(--vimbar-height) + var(--gap));
+}
+
+.vimbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--vimbar-height);
+  z-index: 9;
+  background: var(--entry);
+  color: gray;
+  transition: var(--cubic-all);
+}
+
+.vimbar-inner {
+  height: 100%;
+  max-width: calc(var(--main-width) + var(--gap) * 2);
+  margin: 0 auto;
+  padding: 0 var(--gap);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.vimbar-left,
+.vimbar-right {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.vimbar-left {
+  flex: 0 1 auto;
+}
+
+.vimbar-right {
+  margin-left: auto;
+  display: flex;
+  gap: 12px;
+}
+
+.vimbar-path,
+.vimbar-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.vimbar-time {
+  color: gray;
+  transition: var(--cubic-all);
+}
+
+.vimbar-time:hover {
+  cursor: copy;
+  color: white;
+}
+
+.vimbar-scroll {
+  color: gray;
+  transition: var(--cubic-all);
+}
+
+.vimbar-scroll.is-scrolling {
+  color: var(--pastel-h);
+}
+
+.vimbar-hidden {
+  opacity: 0;
+  pointer-events: none;
+}

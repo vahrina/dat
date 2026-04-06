@@ -1,0 +1,10 @@
+img {
+  border-radius: var(--radius-md) !important;
+  filter: grayscale(50%) drop-shadow(0 0 .2rem #36343e) !important; /* change later looks dogwater */
+  transition: var(--cubic-all) !important;
+}
+
+img:hover {
+  filter: grayscale(0) drop-shadow(0 0 .4rem #43404f) !important;
+  transform: scale(1.015);
+}

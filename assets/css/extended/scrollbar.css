@@ -1,0 +1,20 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* obsolete if no scrollbar is wanted
+.search-modal-box .search-modal-results::-webkit-scrollbar,
+.search-modal-box .search-modal-empty::-webkit-scrollbar {
+width: 8px;
+}
+.search-modal-box .search-modal-results::-webkit-scrollbar-track,
+.search-modal-box .search-modal-empty::-webkit-scrollbar-track {
+background: transparent;
+}
+.search-modal-box .search-modal-results::-webkit-scrollbar-thumb,
+.search-modal-box .search-modal-empty::-webkit-scrollbar-thumb {
+background: var(--tertiary, #ddd);
+border-radius: 0px;
+}
+ */
+

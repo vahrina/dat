@@ -1,0 +1,7 @@
+/public/
+/resources/_gen/
+/preview/
+
+.hugo_build.lock
+config.local.*
+wip.md

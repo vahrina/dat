@@ -1,0 +1,66 @@
+.section-list,
+body.list main.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.section {
+  position: relative;
+  margin-bottom: 0;
+  padding: 0.75rem 0 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--border, #e0e0e0);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  transition: border-color 0.2s ease, padding-left 0.2s ease, background-color 0.2s ease;
+}
+
+.section:hover {
+  border-left-color: var(--primary, #1a1a1a);
+  padding-left: 1.25rem;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.section:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.section:active {
+  transform: none;
+}
+
+.section h2,
+.section .entry-header h2,
+.section .entry-header .entry-hint-parent {
+  margin: 0;
+  font-size: var(--font-size);
+  color: var(--primary, #1a1a1a);
+  transition: var(--cubic-all);
+}
+
+.section p,
+.section .entry-content {
+  margin: 0.25rem 0 0 0;
+  color: var(--secondary, #555);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.section .entry-footer {
+  color: var(--secondary);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.section h2 a,
+.section .entry-header h2 a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--cubic-all);
+}
+
+.section h2 a:hover,
+.section .entry-header h2 a:hover {
+  text-decoration: underline;
+}

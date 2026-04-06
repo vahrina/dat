@@ -1,0 +1,16 @@
+{{- if not .IsHome }}
+{{- $parent := "" }}
+{{- if .IsSection }}
+{{- $parent = .CurrentSection.Parent }}
+{{- else }}
+{{- $parent = .CurrentSection }}
+{{- end }}
+{{- if $parent }}
+{{- $displayTitle := or (or (or ($parent.Title | strings.TrimSpace) $parent.Section) $parent.LinkTitle) "index" }}
+<nav class="back-link" aria-label="back">
+  <a href="{{ $parent.Permalink }}">
+    &larr; back to <span class="parent-title"><b>{{ $displayTitle }}</b></span>
+  </a>
+</nav>
+{{- end }}
+{{- end }}

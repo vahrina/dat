@@ -1,0 +1,27 @@
+:where(a, .post-description, .back-link a, #menu a) {
+  opacity: var(--grayed-out);
+  transition: opacity var(--transition);
+}
+
+.post-description a {
+  text-decoration: underline;
+}
+
+:where(a, .post-description, .back-link a, #menu a):hover {
+  opacity: 1;
+  cursor: copy;
+}
+
+/* underline all clickable dir/files & links when hovered */
+:where(.back-link a, nav #menu span, header.header .logo a.logo-link, .section a):hover {
+  text-decoration: underline;
+}
+
+nav #menu span.active:hover {
+  text-decoration: none;
+}
+
+/* hides the ugly redirect button in top nav */
+nav #menu svg {
+  display: none;
+}

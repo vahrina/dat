@@ -1,0 +1,88 @@
+<div class="vimbar" id="vimbar" data-vimbar-filepath="{{ .File.Path }}" data-vimbar-filetype="{{ .File.Ext }}">
+  <div class="vimbar-inner">
+    <div class="vimbar-left">
+      <span class="vimbar-seg vimbar-path">{{ .Path }}.{{ .File.Ext }}</span>
+    </div>
+
+    <div class="vimbar-right">
+      <span class="vimbar-seg vimbar-filetype">{{ .File.Ext }}</span>
+      <span class="vimbar-seg vimbar-scroll" id="vimbar-scroll"></span>
+      <span class="vimbar-seg vimbar-time" id="vimbar-time"></span>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const bar = document.getElementById('vimbar');
+      if (!bar) return;
+
+      const VIMBAR_LS = 'vimbar_hidden';
+      try { if (localStorage.getItem(VIMBAR_LS) === '1') bar.classList.add('vimbar-hidden'); } catch (_) {}
+
+      window.ToggleVimbar = () => {
+        bar.classList.toggle('vimbar-hidden');
+        try { localStorage.setItem(VIMBAR_LS, bar.classList.contains('vimbar-hidden') ? '1' : '0'); } catch (_) {}
+      };
+
+      const timeEl = document.getElementById('vimbar-time');
+
+      if (timeEl) {
+        let useUS = false;
+
+        const formatTime = () => (useUS
+          ? new Date().toLocaleTimeString('en-GB',
+            {
+              hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit'
+            })
+          : new Date().toLocaleTimeString('en-US',
+            {
+              hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit'
+            })
+        ).toLowerCase();
+
+        const updateTime = () => {
+          timeEl.textContent = formatTime();
+        };
+        updateTime();
+        setInterval(updateTime, 1000);
+
+        timeEl.addEventListener('click', () => {
+          useUS = !useUS;
+          updateTime();
+        });
+      }
+
+      document.body.classList.add('has-vimbar');
+      const scrollEl = document.getElementById('vimbar-scroll');
+      let scrollTimeout;
+
+      const updateScroll = () => {
+        if (!scrollEl) return;
+
+        const doc = document.documentElement;
+        const scrollTop = window.scrollY || doc.scrollTop || 0;
+        const max = Math.max(0, (doc.scrollHeight || 0) - window.innerHeight);
+
+        if (scrollTop <= 0) {
+          scrollEl.textContent = 'top';
+        } else if (max > 0 && scrollTop >= max - 1) {
+          scrollEl.textContent = 'bot';
+        } else {
+          const pct = max > 0 ? Math.round((scrollTop / max) * 100) : 0;
+          scrollEl.textContent = `${pct}%`;
+        }
+
+        scrollEl.classList.add('is-scrolling');
+
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          scrollEl.classList.remove('is-scrolling');
+        }, 150);
+      };
+
+      updateScroll();
+      window.addEventListener('scroll', updateScroll, {passive: true});
+      window.addEventListener('resize', updateScroll, {passive: true});
+
+    })();
+  </script>

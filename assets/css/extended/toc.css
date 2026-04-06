@@ -1,0 +1,43 @@
+.toc {
+  text-transform: lowercase;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  color: gray;
+}
+
+.toc:hover {
+  color: white;
+}
+
+.toc details>summary::marker {
+  content: "#";
+}
+
+.toc details {
+  transition: var(--cubic-all);
+}
+
+.toc details>summary {
+  padding-bottom: 0.5rem;
+}
+
+.toc li::marker {
+  content: "~ ";
+}
+
+details[open] summary {
+  border-bottom: 2px solid var(--tertiary);
+}
+
+details:not([open]) {
+  border-bottom: transparent;
+  margin-bottom: -8px;
+  transition: var(--cubic-all);
+  /* causes snapping atm */
+}
+
+/* arrow */
+#top-link {
+  border-radius: var(--radius-md);
+  transition: var(--cubic-all);
+}

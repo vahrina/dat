@@ -1,0 +1,64 @@
+<script>
+(function () {
+  function isTyping() {
+    var tag = document.activeElement && document.activeElement.tagName;
+    return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' ||
+      (document.activeElement && document.activeElement.isContentEditable);
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey || e.metaKey) return;
+
+    if (!e.altKey) {
+      if (isTyping()) return;
+
+      switch (e.key) {
+        case '/':
+          e.preventDefault();
+          window.OpenSearch && window.OpenSearch();
+          break;
+        case '?':
+          e.preventDefault();
+          window.ToggleHelp && window.ToggleHelp();
+          break;
+        case 'v':
+          window.ToggleVimbar && window.ToggleVimbar();
+          break;
+        case 'r':
+          window.open('https://github.com/vahrina/dat', '_blank', 'noopener,noreferrer');
+          break;
+      }
+      return;
+    }
+
+    // alt + key
+    switch (e.key) {
+      case 'e':
+        e.preventDefault();
+        location.href = '/';
+        break;
+      case 'u':
+        e.preventDefault();
+        location.href = '#top';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        break;
+      case 'c':
+        e.preventDefault();
+        var toc = document.querySelector('.toc details');
+        if (toc) {
+          if (toc.open) toc.removeAttribute('open');
+          else toc.setAttribute('open', '');
+        }
+        break;
+      case 'p':
+        e.preventDefault();
+        location.href = '/posts/';
+        break;
+      case 'r':
+        e.preventDefault();
+        window.open('https://github.com/vahrina/dat', '_blank', 'noopener,noreferrer');
+        break;
+    }
+  });
+})();
+</script>

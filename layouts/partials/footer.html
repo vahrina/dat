@@ -1,0 +1,134 @@
+{{- if not (.Param "hideFooter") }}
+<footer class="footer">
+  <span>&copy; {{ now.Year }} <a id="footer-vahrina-link" href="https://github.com/vahrina" rel="noopener noreferrer"
+      target="_blank"
+      data-links='["https://github.com/vahrina", "https://steamcommunity.com/id/hanf", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"]'>vahrina</a></span>
+</footer>
+{{- end }}
+
+<a href="#top" aria-label="go to top" class="top-link" id="top-link">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+    <path d="M12 6H0l6-6z" />
+  </svg>
+</a>
+
+<!-- opens random links lol -->
+<script>
+  (function () {
+    var el = document.getElementById('footer-vahrina-link');
+    if (!el) return;
+    var links = [];
+    try {links = JSON.parse(el.getAttribute('data-links') || '[]');} catch (e) { }
+    if (links.length === 0) return;
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      var url = links[Math.floor(Math.random() * links.length)];
+      window.open(url, '_blank', 'noopener', 'noreferrer');
+    });
+  })();
+</script>
+
+<script>
+  let menu = document.getElementById('menu');
+  if (menu) {
+    const scrollPosition = localStorage.getItem("menu-scroll-position");
+    if (scrollPosition) {
+      menu.scrollLeft = parseInt(scrollPosition, 10);
+    }
+    menu.onscroll = function () {
+      localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    };
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      var id = this.getAttribute("href").substr(1);
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+          behavior: "smooth"
+        });
+      } else {
+        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+      }
+      if (id === "top") {
+        history.replaceState(null, null, " ");
+      } else {
+        history.pushState(null, null, `#${id}`);
+      }
+    });
+  });
+</script>
+
+{{- if (not site.Params.disableScrollToTop) }}
+<script>
+  var mybutton = document.getElementById("top-link");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      mybutton.style.visibility = "visible";
+      mybutton.style.opacity = "1";
+    } else {
+      mybutton.style.visibility = "hidden";
+      mybutton.style.opacity = "0";
+    }
+  };
+</script>
+{{- end }}
+
+{{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (.Param "ShowCodeCopyButtons")) }}
+<script>
+  document.querySelectorAll('pre > code').forEach((codeblock) => {
+    const wrap = codeblock.closest('.code-block-wrap');
+    const container = codeblock.parentNode.parentNode;
+    const copybutton = document.createElement('button');
+    copybutton.classList.add('copy-code');
+    const copyLabel = '{{- i18n "code_copy" | default "copy" }}';
+    const copiedLabel = '{{- i18n "code_copied" | default "copied!" }}';
+    copybutton.innerHTML =
+      '<span class="copy-label">' +
+      copyLabel +
+      '</span><span class="copied-label" aria-hidden="true">' +
+      copiedLabel +
+      '</span>';
+    function setCopied(isCopied) {
+      if (isCopied) {
+        copybutton.classList.add('is-copied');
+      } else {
+        copybutton.classList.remove('is-copied');
+      }
+    }
+    function copyingDone() {
+      setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+      }, 2500);
+    }
+    copybutton.addEventListener('click', (cb) => {
+      if ('clipboard' in navigator) {
+        navigator.clipboard.writeText(codeblock.textContent);
+        copyingDone();
+        return;
+      }
+      const range = document.createRange();
+      range.selectNodeContents(codeblock);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      try {
+        document.execCommand('copy');
+        copyingDone();
+      } catch (e) { };
+      selection.removeRange(range);
+    });
+    if (wrap) {
+      wrap.appendChild(copybutton);
+    } else if (container.classList.contains("highlight")) {
+      container.appendChild(copybutton);
+    } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+      codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+    } else {
+      codeblock.parentNode.appendChild(copybutton);
+    }
+  });
+</script>
+{{- end }}

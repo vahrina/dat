@@ -1,0 +1,234 @@
+<div id="search-modal" class="search-modal" role="dialog" aria-label="search" aria-modal="true" hidden
+  style="display: none;">
+  <div class="search-modal-backdrop" id="search-modal-backdrop"></div>
+  <div class="search-modal-box">
+    <div class="search-modal-header">
+      <input type="search" id="search-modal-input" class="search-modal-input" placeholder="search for ..."
+        autocomplete="off" maxlength="64" aria-label="search">
+    </div>
+    <div id="search-modal-results" class="search-modal-results"></div>
+    <div id="search-modal-empty" class="search-modal-empty">
+      <p class="search-modal-empty-title" style="text-align: center;">criteria</p>
+      <ul class="search-modal-tips">
+        <li><span class="search-modal-key">plain text</span><span class="search-modal-desc">matches any dir /
+            file</span></li>
+        <li><span class="search-modal-key" style="opacity: 0.3;"><b>wip</b> <code>!file</code></span><span
+            class="search-modal-desc" style="opacity: 0.3;">match by path / file</span></li>
+        <li><span class="search-modal-key" style="opacity: 0.3;"><b>wip</b> <code>!dir</code></span><span
+            class="search-modal-desc" style="opacity: 0.3;">match by path / dir</span></li>
+      </ul>
+    </div>
+    <div class="search-modal-help">
+      <p class="search-modal-help-title" style="text-align: center;">shortcuts</p>
+      <ul class="search-modal-help-list">
+        <li><span class="search-modal-key"><kbd>/</kbd></span><span class="search-modal-desc">open search</span></li>
+        <li><span class="search-modal-key"><kbd>esc</kbd></span><span class="search-modal-desc">close search</span></li>
+        <li><span class="search-modal-key"><kbd>↑</kbd> <kbd>↓</kbd></span><span class="search-modal-desc">move between
+            results</span></li>
+        <li><span class="search-modal-key"><kbd>enter</kbd></span><span class="search-modal-desc">open selected
+            result</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/fuse.js@7.0.0"></script>
+<script>
+  (function () {
+    var modal = document.getElementById('search-modal');
+    var backdrop = document.getElementById('search-modal-backdrop');
+    var input = document.getElementById('search-modal-input');
+    var resultsEl = document.getElementById('search-modal-results');
+    var emptyEl = document.getElementById('search-modal-empty');
+
+    var fuse;
+    var indexData;
+    var focusIndex = -1;
+    var indexUrl = '{{ "index.json" | absURL }}';
+
+    function loadIndex(callback) {
+      if (indexData) {
+        callback(indexData);
+        return;
+      }
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', indexUrl);
+      xhr.onload = function () {
+        try {
+          indexData = xhr.status === 200 ? JSON.parse(xhr.responseText) : [];
+        } catch (err) {
+          indexData = [];
+        }
+        indexData = Array.isArray(indexData) ? indexData : [];
+        callback(indexData);
+      };
+      xhr.onerror = function () {
+        callback([]);
+      };
+      xhr.send();
+    }
+
+    function escapeHtml(text) {
+      var node = document.createElement('div');
+      node.textContent = text;
+      return node.innerHTML;
+    }
+
+    function showEmpty() {
+      resultsEl.innerHTML = '';
+      resultsEl.hidden = true;
+      emptyEl.hidden = false;
+    }
+
+    function showResults(items) {
+      emptyEl.hidden = true;
+      resultsEl.hidden = false;
+      focusIndex = -1;
+
+      if (!items || !items.length) {
+        resultsEl.innerHTML = '<p class="search-modal-no-results">that\'s not a thing in here i swear</p>';
+        return;
+      }
+      var seen = {};
+      var html = '<ul class="search-modal-results-list" role="listbox">';
+      items.forEach(function (item, index) {
+        var entry = item.item != null ? item.item : item;
+        if (entry.permalink && seen[entry.permalink]) return;
+        if (entry.permalink) seen[entry.permalink] = true;
+        var title = entry.title || '';
+        var permalink = (entry.permalink || '#').replace(/"/g, '&quot;');
+        var typeLabel = entry.type === 'dir'
+          ? ' <span class="search-modal-type search-modal-type-dir">dir</span>'
+          : (entry.type === 'file' ? ' <span class="search-modal-type search-modal-type-file">file</span>' : '');
+        var pathHtml = entry.path ? ' <span class="search-modal-path">' + escapeHtml(entry.path) + '</span>' : '';
+        var tagsHtml = entry.tags && entry.tags.length
+          ? ' <span class="search-modal-tags">' + entry.tags.map(escapeHtml).join(', ') + '</span>'
+          : '';
+        html += '<li role="option" tabindex="-1" data-idx="' + index + '"><a href="' + permalink + '">' + escapeHtml(title) + typeLabel + pathHtml + tagsHtml + '</a></li>';
+      });
+      resultsEl.innerHTML = html + '</ul>';
+    }
+
+    function runSearch() {
+      var query = (input.value || '').trim();
+      if (!fuse || !indexData || !query) {showEmpty(); return;}
+      if (query === '!dir' || query === '!file') {showEmpty(); return;}
+      if (query.startsWith('!dir ')) query = query.slice(5).trim();
+      else if (query.startsWith('!file ')) query = query.slice(6).trim();
+      if (!query) {showEmpty(); return;}
+      showResults(fuse.search(query, {limit: 50}));
+    }
+
+    function openModal() {
+      modal.hidden = false;
+      modal.removeAttribute('hidden');
+      modal.style.display = '';
+      input.value = '';
+      showEmpty();
+      input.focus();
+      loadIndex(function (loadedData) {
+        if (!fuse) {
+          fuse = new Fuse(loadedData, {
+            keys: ['title', 'permalink', 'summary', 'content', 'tags', 'path'],
+            threshold: 0.4,
+            distance: 100,
+            ignoreLocation: true
+          });
+        }
+      });
+    }
+
+    function closeModal() {
+      if (modal.classList.contains('search-modal-closing')) return;
+      var box = modal.querySelector('.search-modal-box');
+      modal.classList.add('search-modal-closing');
+      box.addEventListener('animationend', function done() {
+        box.removeEventListener('animationend', done);
+        modal.classList.remove('search-modal-closing');
+        modal.hidden = true;
+        modal.setAttribute('hidden', '');
+        modal.style.display = 'none';
+      });
+    }
+
+    function getResultItems() {
+      var list = resultsEl.querySelector('.search-modal-results-list');
+      return list ? list.querySelectorAll('li') : [];
+    }
+
+    function moveFocus(delta) {
+      var items = getResultItems();
+      if (!items.length) return;
+      if (focusIndex < 0 && delta === 1) {focusIndex = 0; items[0].focus(); return;}
+      if (focusIndex < 0 && delta === -1) return;
+      var nextIndex = focusIndex + delta;
+      if (nextIndex < 0) {focusIndex = -1; input.focus(); return;}
+      if (nextIndex >= items.length) return;
+      focusIndex = nextIndex;
+      items[focusIndex].focus();
+    }
+
+    function openSelectedResult() {
+      var items = getResultItems();
+      var activeEl = document.activeElement;
+      var selectedItem = (activeEl && resultsEl.contains(activeEl) && activeEl.closest('li'))
+        ? activeEl.closest('li')
+        : (focusIndex >= 0 && items[focusIndex] ? items[focusIndex] : items[0]);
+      if (selectedItem) {
+        var link = selectedItem.querySelector('a[href]');
+        if (link && link.getAttribute('href') !== '#') {
+          closeModal();
+          location.href = link.getAttribute('href');
+        }
+      }
+    }
+
+    input.oninput = runSearch;
+
+    input.onkeydown = function (event) {
+      if (event.key === 'ArrowDown') {event.preventDefault(); moveFocus(1);}
+      else if (event.key === 'ArrowUp') {event.preventDefault(); moveFocus(-1);}
+      else if (event.key === 'Escape') closeModal();
+    };
+
+    resultsEl.onkeydown = function (event) {
+      if (event.key === 'Escape') {closeModal(); input.focus(); return;}
+      if (event.key === 'Enter') {event.preventDefault(); openSelectedResult(); return;}
+      if (event.key === 'ArrowDown') {event.preventDefault(); moveFocus(1); return;}
+      if (event.key === 'ArrowUp') {event.preventDefault(); moveFocus(-1); return;}
+      if (event.key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey) {
+        event.preventDefault();
+        input.focus();
+        input.value += event.key;
+        runSearch();
+      } else if (event.key === 'Backspace') {
+        event.preventDefault();
+        input.focus();
+        input.value = input.value.slice(0, -1);
+        runSearch();
+      }
+    };
+
+    resultsEl.addEventListener('focus', function (event) {
+      var item = event.target.closest('li[data-idx]');
+      if (item) focusIndex = +item.getAttribute('data-idx');
+    }, true);
+
+    resultsEl.onclick = function (event) {
+      if (event.target.closest('a[href]') && event.target.closest('a').getAttribute('href') !== '#') closeModal();
+    };
+
+    backdrop.onclick = closeModal;
+
+    window.OpenSearch = openModal;
+    window.CloseSearch = closeModal;
+
+    document.body.onclick = function (event) {
+      var searchLink = event.target.closest('a[href*="/search"]');
+      if (searchLink && searchLink.pathname.indexOf('/search') !== -1 && !searchLink.target) {
+        event.preventDefault();
+        openModal();
+      }
+    };
+  })();
+</script>

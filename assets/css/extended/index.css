@@ -1,0 +1,7 @@
+#top>main>div {
+  margin: 0;
+}
+
+#top>main>ul>div>a {
+  font-weight: 600;
+}

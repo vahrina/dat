@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+  <header class="entry-header">
+    <h1>{{ .Title | markdownify }}</h1>
+  </header>
+  <div class="entry-content">
+    <pre class="home-info-pre">{{- $raw := .Content | replaceRE "\n" " \n" -}}
+      {{- $c := $raw | markdownify -}}
+      {{- $c = replace $c "<em>" "*<em>" -}}
+          {{- $c = replace $c "</em>" "</em>*" -}}
+      {{- $c = replace $c "<strong>" "**<strong>" -}}
+          {{- $c = replace $c "</strong>" "</strong>**" -}}
+      {{- $c | safeHTML -}}</pre>
+  </div>
+  {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+</article>
+{{- end }}
+
+<h1>recent posts</h1>
+
+<ul class="section-list">
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ $posts = sort $posts "Lastmod" "desc" }}
+  {{ $posts = where $posts "Params.hiddenInHomeList" "ne" true }}
+
+  <!-- display x posts on root -->
+  {{ range first 3 $posts }}
+  <div class="section">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a> |
+    <span class="recent-post-meta">
+      {{ .Lastmod.Format "02.01.2006" }} | {{ .ReadingTime }} min
+    </span>
+    {{ with .Description }}
+    <p class="recent-post-excerpt">{{ . }}</p>
+    {{ end }}
+  </div>
+  {{ end }}
+</ul>
+
+{{ end }}

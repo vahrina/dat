@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'Maple Mono NF';
+  src: url('/fonts/MapleMonoNL-Regular.ttf.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-size: 1.3rem;
+  --radius-md: 0.75rem;
+  --transition: 0.2s ease;
+  --pastel-bg: #f6f5f4;
+  --pastel-h: #cfcdca;
+  --pastel-content: #3a3938;
+  --font: "Maple Mono NF", monospace;
+  --selection-bg: rgba(82, 82, 82, 0.5);
+  --grayed-out: 0.5;
+  --cubic-all: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root {
+  background-color: var(--pastel-bg);
+  color: var(--pastel-content);
+}
+
+:root .code-block-wrap {
+  background: var(--code-block-bg, #f5f5f5);
+  border-color: var(--border, #e0e0e0);
+}
+
+:root .code-block-header {
+  background: var(--code-bg, #ebebeb);
+}
+
+:root .code-block-lang {
+  color: var(--secondary, #555);
+}
+
+:root code::selection {
+  background-color: var(--selection-bg);
+  color: inherit;
+}
+
+:root code::-moz-selection {
+  background-color: var(--selection-bg);
+  color: inherit;
+}
+
+html {
+  font-family: var(--font);
+  letter-spacing: 1px;
+}
+
+*,
+*::before,
+*::after {
+  font-family: var(--font);
+}
+
+body {
+  font-family: var(--font);
+  user-select: none;
+}

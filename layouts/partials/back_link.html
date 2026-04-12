@@ -6,11 +6,13 @@
 {{- $parent = .CurrentSection }}
 {{- end }}
 {{- if $parent }}
-{{- $displayTitle := or (or (or ($parent.Title | strings.TrimSpace) $parent.Section) $parent.LinkTitle) "index" }}
 <nav class="back-link" aria-label="back">
-  <a href="{{ $parent.Permalink }}">
-    &larr; back to <span class="parent-title"><b>{{ $displayTitle }}</b></span>
-  </a>
+    {{- if $parent.IsHome }}
+    <a href="{{ $parent.Permalink }}">&larr; root</a>
+    {{- else }}
+    {{- $displayTitle := or (or (or ($parent.Title | strings.TrimSpace) $parent.Section) $parent.LinkTitle) "index" }}
+    <a href="{{ $parent.Permalink }}">&larr; return to <span class="parent-title"><b>{{ $displayTitle }}</b></span></a>
+    {{- end }}
 </nav>
 {{- end }}
 {{- end }}

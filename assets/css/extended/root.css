@@ -8,15 +8,17 @@
 
 :root {
   --font-size: 1.3rem;
-  --radius-md: 0.75rem;
-  --transition: 0.2s ease;
-  --pastel-bg: #f6f5f4;
-  --pastel-h: #cfcdca;
-  --pastel-content: #3a3938;
+  --radius-md: 0.7rem;
+
   --font: "Maple Mono NF", monospace;
-  --selection-bg: rgba(82, 82, 82, 0.5);
+
+  --transition: 450ms cubic-bezier(0.5, 1, 0.36, 1);
+  --pastel-bg: #f6f5f4;
+  --pastel-content: #3a3938;
+
+  --selection-bg: rgba(160, 154, 188, .3);
+
   --grayed-out: 0.5;
-  --cubic-all: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 :root {

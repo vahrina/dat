@@ -19,7 +19,7 @@ body.has-vimbar #top-link {
   z-index: 9;
   background: var(--entry);
   color: gray;
-  transition: var(--cubic-all);
+  transition: var(--transition);
 }
 
 .vimbar-inner {
@@ -61,7 +61,7 @@ body.has-vimbar #top-link {
 
 .vimbar-time {
   color: gray;
-  transition: var(--cubic-all);
+  transition: var(--transition);
 }
 
 .vimbar-time:hover {
@@ -71,7 +71,7 @@ body.has-vimbar #top-link {
 
 .vimbar-scroll {
   color: gray;
-  transition: var(--cubic-all);
+  transition: var(--transition);
 }
 
 .vimbar-scroll.is-scrolling {
@@ -81,4 +81,12 @@ body.has-vimbar #top-link {
 .vimbar-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+body.has-vimbar.vimbar-body-hidden {
+  padding-bottom: 0;
+}
+
+body.has-vimbar.vimbar-body-hidden #top-link {
+  bottom: var(--gap);
 }

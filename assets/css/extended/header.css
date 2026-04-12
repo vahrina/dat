@@ -5,3 +5,8 @@ header.header .nav #menu {
 header.header {
   background-color: var(--entry);
 }
+
+.page-header,
+.post-header {
+  margin: 24px 0 var(--content-gap);
+}

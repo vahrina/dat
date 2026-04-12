@@ -14,6 +14,7 @@ ShowToc: false
 | host | `http://natas4.natas.labs.overthewire.org` |
 
 ### explanation
+
 we bump into an access disallowed response, telling us we are the wrong visitor
 
 ```html

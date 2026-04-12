@@ -8,8 +8,6 @@ code,
   margin: 1rem 0;
   border-radius: var(--radius-md);
   overflow: hidden;
-  border: 1px solid var(--border, #e0e0e0);
-  background: var(--code-block-bg, #2e2e33);
 }
 
 .code-block-wrap .copy-code {

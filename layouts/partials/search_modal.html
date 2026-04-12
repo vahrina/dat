@@ -1,37 +1,58 @@
-<div id="search-modal" class="search-modal" role="dialog" aria-label="search" aria-modal="true" hidden
-  style="display: none;">
+<div id="search-modal"
+     class="search-modal"
+     role="dialog"
+     aria-label="search"
+     aria-modal="true"
+     hidden
+     style="display: none">
   <div class="search-modal-backdrop" id="search-modal-backdrop"></div>
   <div class="search-modal-box">
     <div class="search-modal-header">
-      <input type="search" id="search-modal-input" class="search-modal-input" placeholder="search for ..."
-        autocomplete="off" maxlength="64" aria-label="search">
+      <input type="search"
+             id="search-modal-input"
+             class="search-modal-input"
+             placeholder="search for ..."
+             autocomplete="off"
+             maxlength="64"
+             aria-label="search">
     </div>
     <div id="search-modal-results" class="search-modal-results"></div>
     <div id="search-modal-empty" class="search-modal-empty">
       <p class="search-modal-empty-title" style="text-align: center;">criteria</p>
       <ul class="search-modal-tips">
-        <li><span class="search-modal-key">plain text</span><span class="search-modal-desc">matches any dir /
-            file</span></li>
-        <li><span class="search-modal-key" style="opacity: 0.3;"><b>wip</b> <code>!file</code></span><span
-            class="search-modal-desc" style="opacity: 0.3;">match by path / file</span></li>
-        <li><span class="search-modal-key" style="opacity: 0.3;"><b>wip</b> <code>!dir</code></span><span
-            class="search-modal-desc" style="opacity: 0.3;">match by path / dir</span></li>
+        <li>
+          <span class="search-modal-key">plain text</span><span class="search-modal-desc">matches any dir /
+          file</span>
+        </li>
+        <li>
+          <span class="search-modal-key" style="opacity: 0.3;"><b>wip</b> <code>!file</code></span><span class="search-modal-desc" style="opacity: 0.3;">match by path / file</span>
+        </li>
+        <li>
+          <span class="search-modal-key" style="opacity: 0.3;"><b>wip</b> <code>!dir</code></span><span class="search-modal-desc" style="opacity: 0.3;">match by path / dir</span>
+        </li>
       </ul>
     </div>
     <div class="search-modal-help">
       <p class="search-modal-help-title" style="text-align: center;">shortcuts</p>
       <ul class="search-modal-help-list">
-        <li><span class="search-modal-key"><kbd>/</kbd></span><span class="search-modal-desc">open search</span></li>
-        <li><span class="search-modal-key"><kbd>esc</kbd></span><span class="search-modal-desc">close search</span></li>
-        <li><span class="search-modal-key"><kbd>↑</kbd> <kbd>↓</kbd></span><span class="search-modal-desc">move between
-            results</span></li>
-        <li><span class="search-modal-key"><kbd>enter</kbd></span><span class="search-modal-desc">open selected
-            result</span></li>
+        <li>
+          <span class="search-modal-key"><kbd>/</kbd></span><span class="search-modal-desc">open search</span>
+        </li>
+        <li>
+          <span class="search-modal-key"><kbd>esc</kbd></span><span class="search-modal-desc">close search</span>
+        </li>
+        <li>
+          <span class="search-modal-key"><kbd>↑</kbd> <kbd>↓</kbd></span><span class="search-modal-desc">move between
+          results</span>
+        </li>
+        <li>
+          <span class="search-modal-key"><kbd>enter</kbd></span><span class="search-modal-desc">open selected
+          result</span>
+        </li>
       </ul>
     </div>
   </div>
 </div>
-
 <script src="https://unpkg.com/fuse.js@7.0.0"></script>
 <script>
   (function () {

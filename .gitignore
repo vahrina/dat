@@ -3,5 +3,6 @@
 /preview/
 
 .hugo_build.lock
+*.log
 config.local.*
 wip.md

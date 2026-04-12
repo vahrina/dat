@@ -9,12 +9,13 @@
 
 :where(a, .post-description, .back-link a, #menu a):hover {
   opacity: 1;
-  cursor: copy;
 }
 
-/* underline all clickable dir/files & links when hovered */
-:where(.back-link a, nav #menu span, header.header .logo a.logo-link, .section a):hover {
+/* underline all clickable dir/files & links when hovered 
+* :where(.back-link a, nav #menu span, header.header .logo a.logo-link, .section a):hover */
+:where(.back-link a, nav #menu span):hover {
   text-decoration: underline;
+  cursor: copy;
 }
 
 nav #menu span.active:hover {

@@ -14,6 +14,7 @@ ShowToc: false
 | host | `http://natas1.natas.labs.overthewire.org` |
 
 ### explanation
+
 simply change the username, host & password respectively
 
 ```sh
@@ -46,4 +47,3 @@ for our matter, just curling it will be more than sufficient to expose the comme
 ```html
 <!-- The password for natas2 is TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI -->
 ```
-

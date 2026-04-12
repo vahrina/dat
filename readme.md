@@ -35,7 +35,7 @@ git clone https://github.com/vahrina/dat.git
 cd dat
 ```
 
-2. become familiar with the hugo ecosystem: [docs](https://gohugo.io/about/introduction/) | visual learners: [fireship](https://www.youtube.com/watch?v=0RKpf3rK57I), [luke smith](https://www.youtube.com/watch?v=ZFL09qhKi5I)
+1. become familiar with the hugo ecosystem: [docs](https://gohugo.io/about/introduction/) | visual learners: [fireship](https://www.youtube.com/watch?v=0RKpf3rK57I), [luke smith](https://www.youtube.com/watch?v=ZFL09qhKi5I)
 
 feel free to adjust the theme in `/assets/css/extended/` & `/layouts/` to however you like it
 

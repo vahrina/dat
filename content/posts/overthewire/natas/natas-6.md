@@ -7,13 +7,14 @@ weight: 7
 ShowToc: false
 ---
 
-| info | value |
-|:-----|-------|
-| user | `natas6` |
-| pass | `0RoJwHdSKWFTYR5WuiAewauSuNaBXned` |
-| host | `http://natas6.natas.labs.overthewire.org/` |
+| info | value                                      |
+|:-----|--------------------------------------------|
+| user | `natas6`                                   |
+| pass | `0RoJwHdSKWFTYR5WuiAewauSuNaBXned`         |
+| host | `http://natas6.natas.labs.overthewire.org` |
 
 ### explanation
+
 we are presented with a `<form>` that we have to submit
 
 ```html
@@ -31,7 +32,9 @@ plus a helpful source code ressource
 </div>
 ```
 
-unless you want to fight [sed](https://en.wikipedia.org/wiki/Sed) as well, i suggest you to open the page source in your browser, i'll provide a concise way of how to substitute the noise into readable code below
+unless you want to fight [sed](https://en.wikipedia.org/wiki/Sed) (good regex practice, i promise!), you may as well simply open the page in your browser
+
+**for the nerds**
 
 ```sh
 curl http://natas6.natas.labs.overthewire.org/index-source.html \
@@ -45,25 +48,24 @@ curl http://natas6.natas.labs.overthewire.org/index-source.html \
   s/<br ?\/?>/\n/g          # convert <br> tags to real newlines
   /<\?/ , /\?>/p            # print only php block
 }'
+
+# compact version below
+sed -nE '/<code>/,/<\/code>/{s/<\/?span[^>]*>//g;s/&lt;/</g;s/&gt;/>/g;s/&nbsp;/ /g;s/<br ?\/?>/\n/g;/<\?/,/\?>/p}'
 ```
 
-more compact
+or pipe it into [w3m](https://w3m.sourceforge.net/) unless you are a maniac & read the encoded strings line by line
 
 ```sh
-curl http://natas6.natas.labs.overthewire.org/index-source.html \
--u natas6:0RoJwHdSKWFTYR5WuiAewauSuNaBXned \
-| sed -nE '/<code>/,/<\/code>/{s/<\/?span[^>]*>//g;s/&lt;/</g;s/&gt;/>/g;s/&nbsp;/ /g;s/<br ?\/?>/\n/g;/<\?/,/\?>/p}'
+.. | w3m -T text/html
 ```
 
-you will need this in future requests, prepare to have a script to pair with curl or always copy paste it if you really intend to only work from cli! or become a maniac and read the encoded strings line by line
-
-anyways, apart from `sed`, we can find a folder of interest included in the `php` output
+anyways, we can find a folder of interest included in the `php` snippet
 
 ```php
 include "includes/secret.inc";
 ```
 
-navigate to it and find the password, then submit the post request with the `-d`/`--data` parameter 
+navigate to it and find the password, then submit the post request with the `-d`/`--data` parameter
 
 ```sh
 curl http://natas6.natas.labs.overthewire.org/ \
@@ -77,4 +79,3 @@ after successfully submitting the post request via the two parameters `name=secr
 <div id="content">
     Access granted. The password for natas7 is bmg8SvU1LizuWjx3y7xkNERkHxGre0GS
 ```
-

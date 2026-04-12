@@ -1,27 +1,35 @@
-<div class="vimbar" id="vimbar" data-vimbar-filepath="{{ .File.Path }}" data-vimbar-filetype="{{ .File.Ext }}">
+<div class="vimbar"
+     id="vimbar"
+     data-vimbar-filepath="{{ .File.Path }}"
+     data-vimbar-filetype="{{ .File.Ext }}">
   <div class="vimbar-inner">
     <div class="vimbar-left">
       <span class="vimbar-seg vimbar-path">{{ .Path }}.{{ .File.Ext }}</span>
     </div>
-
     <div class="vimbar-right">
       <span class="vimbar-seg vimbar-filetype">{{ .File.Ext }}</span>
       <span class="vimbar-seg vimbar-scroll" id="vimbar-scroll"></span>
       <span class="vimbar-seg vimbar-time" id="vimbar-time"></span>
     </div>
   </div>
-
   <script>
     (() => {
       const bar = document.getElementById('vimbar');
       if (!bar) return;
 
       const VIMBAR_LS = 'vimbar_hidden';
-      try { if (localStorage.getItem(VIMBAR_LS) === '1') bar.classList.add('vimbar-hidden'); } catch (_) {}
+      try {
+        if (localStorage.getItem(VIMBAR_LS) === 1) {
+          bar.classList.add('vimbar-hidden');
+          document.body.classList.add('vimbar-body-hidden');
+        }
+      } catch (_) {}
 
       window.ToggleVimbar = () => {
         bar.classList.toggle('vimbar-hidden');
-        try { localStorage.setItem(VIMBAR_LS, bar.classList.contains('vimbar-hidden') ? '1' : '0'); } catch (_) {}
+        const isHidden = bar.classList.contains('vimbar-hidden');
+        document.body.classList.toggle('vimbar-body-hidden', isHidden);
+        try { localStorage.setItem(VIMBAR_LS, isHidden ? '1' : '0'); } catch (_) {}
       };
 
       const timeEl = document.getElementById('vimbar-time');

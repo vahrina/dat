@@ -102,22 +102,24 @@
         setCopied(false);
       }, 2500);
     }
-    copybutton.addEventListener('click', (cb) => {
-      if ('clipboard' in navigator) {
-        navigator.clipboard.writeText(codeblock.textContent);
-        copyingDone();
-        return;
-      }
+    copybutton.addEventListener('click', () => {
       const range = document.createRange();
       range.selectNodeContents(codeblock);
       const selection = window.getSelection();
       selection.removeAllRanges();
       selection.addRange(range);
+      let copied = false;
       try {
-        document.execCommand('copy');
-        copyingDone();
-      } catch (e) { };
+        copied = document.execCommand('copy');
+      } catch (e) { }
       selection.removeRange(range);
+      if (copied) {
+        copyingDone();
+        return;
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(codeblock.textContent).then(copyingDone).catch(function () { });
+      }
     });
     if (wrap) {
       wrap.appendChild(copybutton);

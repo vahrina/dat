@@ -1,7 +1,7 @@
 ---
 date: '2026-02-14'
 description: never thought about blogging before, unc status incoming haha
-draft: true
+draft: false
 title: posts/
 ---
 

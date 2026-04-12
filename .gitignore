@@ -1,6 +1,7 @@
 /public/
 /resources/_gen/
 /preview/
+/content/posts/overthewire/natas/source/
 
 .hugo_build.lock
 *.log

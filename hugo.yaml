@@ -1,4 +1,4 @@
-baseUrl: 'https://localhost:1313/'
+baseURL: 'https://dat.vah.wtf/'
 languageCode: en-us
 title: vah
 theme: paper-mod

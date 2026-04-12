@@ -70,12 +70,11 @@ body.has-vimbar #top-link {
 }
 
 .vimbar-scroll {
-  color: gray;
   transition: var(--transition);
 }
 
 .vimbar-scroll.is-scrolling {
-  color: var(--pastel-h);
+  color: var(--pastel-bg);
 }
 
 .vimbar-hidden {

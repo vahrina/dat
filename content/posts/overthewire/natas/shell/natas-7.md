@@ -4,7 +4,6 @@ description: home, about, /etc...
 draft: false
 title: natas-7
 weight: 8
-ShowToc: false
 ---
 
 | info | value                                      |
@@ -12,6 +11,8 @@ ShowToc: false
 | user | `natas7`                                   |
 | pass | `bmg8SvU1LizuWjx3y7xkNERkHxGre0GS`         |
 | host | `http://natas7.natas.labs.overthewire.org` |
+
+---
 
 ## explanation
 

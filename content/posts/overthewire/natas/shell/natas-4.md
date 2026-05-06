@@ -4,16 +4,17 @@ description: we didn't move, the header did
 draft: false
 title: natas-4
 weight: 5
-ShowToc: false
 ---
 
-| info | value |
-|:-----|------:|
-| user | `natas4` |
-| pass | `QryZXc2e0zahULdHrtHxzyYkj59kUxLQ` |
+| info | value                                      |
+|:-----|-------------------------------------------:|
+| user | `natas4`                                   |
+| pass | `QryZXc2e0zahULdHrtHxzyYkj59kUxLQ`         |
 | host | `http://natas4.natas.labs.overthewire.org` |
 
-### explanation
+---
+
+## explanation
 
 we bump into an access disallowed response, telling us we are the wrong visitor
 

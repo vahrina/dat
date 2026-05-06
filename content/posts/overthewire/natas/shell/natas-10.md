@@ -4,7 +4,6 @@ description: natas-9 was the less loved child
 draft: false
 title: natas-10
 weight: 11
-ShowToc: false
 ---
 
 | info | value                                       |
@@ -12,6 +11,8 @@ ShowToc: false
 | user | `natas10`                                   |
 | pass | `t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu`          |
 | host | `http://natas10.natas.labs.overthewire.org` |
+
+---
 
 ## explanation
 

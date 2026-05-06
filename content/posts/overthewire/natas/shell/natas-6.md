@@ -4,7 +4,6 @@ description: the filesystem is gossip lol
 draft: false
 title: natas-6
 weight: 7
-ShowToc: false
 ---
 
 | info | value                                      |
@@ -13,7 +12,9 @@ ShowToc: false
 | pass | `0RoJwHdSKWFTYR5WuiAewauSuNaBXned`         |
 | host | `http://natas6.natas.labs.overthewire.org` |
 
-### explanation
+---
+
+## explanation
 
 we are presented with a `<form>` that we have to submit
 

@@ -1,0 +1,13 @@
+#top>main>article>div>table {
+  margin-inline: auto;
+  width: fit-content;
+}
+
+#top>main>article>div>table>thead>tr>th {
+  border-bottom: 2px solid var(--pastel-content);
+  font-weight: bold;
+}
+
+#top>main>article>div>table>tbody>tr:last-child>td {
+  border-bottom: none;
+}

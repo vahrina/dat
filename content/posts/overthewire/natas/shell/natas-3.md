@@ -4,25 +4,27 @@ description: spiders follow rules, attackers read them
 draft: false
 title: natas-3
 weight: 4
-ShowToc: false
 ---
 
-| info | value |
-|:-----|------:|
-| user | `natas3` |
-| pass | `3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH` |
+| info | value                                      |
+|:-----|-------------------------------------------:|
+| user | `natas3`                                   |
+| pass | `3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH`         |
 | host | `http://natas3.natas.labs.overthewire.org` |
 
-### explanation
+---
+
+## explanation
+
 there isn't anything interesting on this page besides the comment saying
 
 ```html
 <!-- No more information leaks!! Not even Google will find it this time... -->
 ```
 
-which hints at your domain having security issues in form of the [robots.txt](https://en.wikipedia.org/wiki/Robots.txt) file which contains general rules for what a [web crawler/robot](https://en.wikipedia.org/wiki/Web_crawler) is allowed to visit
+which hints at your domain having security issues in form of the [robots.txt](https://en.wikipedia.org/wiki/Robots.txt) file, which contains general rules for what a [web crawler/robot](https://en.wikipedia.org/wiki/Web_crawler) is allowed to visit
 
-without further ado, check out the `robots.txt` file for anything useful
+without further ado, check out `robots.txt` for anything useful
 
 ```sh
 curl http://natas3.natas.labs.overthewire.org/robots.txt \

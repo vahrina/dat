@@ -1,17 +1,26 @@
 .pagination {
-  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  margin-inline: auto;
 }
 
 .pagination a {
-  color: var(--theme);
-  font-size: 13px;
-  line-height: 36px;
-  background: var(--primary);
-  border-radius: calc(36px / 2);
-  padding: 0 16px;
+  color: var(--secondary);
+  text-transform: lowercase;
+  opacity: var(--grayed-out);
+  transition: var(--transition);
+  background: transparent;
 }
 
-.pagination .next {
-  margin-inline-start: auto;
+.pagination a:hover {
+  color: var(--pastel-bg);
+  text-decoration: underline;
+  transform: translateY(-0.04em);
+  opacity: 1;
 }
 
+.pagination .page-count {
+  font-size: .75rem;
+  color: var(--tertiary);
+}

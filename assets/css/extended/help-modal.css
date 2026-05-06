@@ -73,10 +73,6 @@
   }
 }
 
-.parent-title {
-  text-decoration: underline;
-}
-
 .help-modal.help-modal-closing .help-modal-backdrop {
   animation: help-modal-backdrop-out 0.2s ease-in forwards;
 }

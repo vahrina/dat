@@ -1,0 +1,31 @@
+.natas-py-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.natas-py-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.natas-py-summary {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.48rem 1rem;
+  cursor: copy;
+  background: var(--entry);
+  border: none;
+}
+
+.natas-py-item[open] .natas-py-summary {
+  border-bottom: none;
+}
+
+.natas-py-body .code-block-wrap {
+  margin: 0;
+  border-radius: 0;
+}

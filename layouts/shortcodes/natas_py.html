@@ -1,0 +1,34 @@
+{{- $base := "content/posts/overthewire/natas/python" -}}
+{{- $filter := strings.TrimSpace (default "" (.Get "dir")) -}}
+{{- $hlOpts := dict "lineNos" "table" "noClasses" false -}}
+<div class="natas-py-list">
+  {{- range (readDir $base) -}}
+  {{- $dirName := .Name -}}
+  {{- if and .IsDir (strings.HasPrefix $dirName "natas-") -}}
+  {{- if or (eq $filter "") (eq $dirName $filter) -}}
+  {{- range (readDir (printf "%s/%s" $base $dirName)) -}}
+  {{- $f := .Name -}}
+  {{- if and (not .IsDir) (strings.HasSuffix $f ".py") -}}
+  {{- $path := printf "%s/%s/%s" $base $dirName $f -}}
+  {{- $raw := readFile $path | chomp -}}
+  {{- $id := anchorize (printf "%s %s" $dirName (strings.TrimSuffix ".py" $f)) -}}
+  {{- $heading := lower (replace $dirName "-" " ") -}}
+  <details class="natas-py-item" id="{{ $id }}">
+    <summary class="natas-py-summary">
+      <span class="natas-py-heading">{{ $heading }}</span>
+    </summary>
+    <div class="natas-py-body">
+      <div class="code-block-wrap">
+        <div class="code-block-header">
+          <span class="code-block-lang">python</span>
+        </div>
+        <div class="code-block-inner">{{- transform.Highlight $raw "python" $hlOpts | safeHTML -}}</div>
+      </div>
+    </div>
+  </details>
+  {{- end -}}
+  {{- end -}}
+  {{- end -}}
+  {{- end -}}
+  {{- end -}}
+</div>

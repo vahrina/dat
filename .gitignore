@@ -2,6 +2,7 @@
 /resources/_gen/
 /preview/
 /content/posts/overthewire/natas/source/
+.venv/
 
 .hugo_build.lock
 *.log

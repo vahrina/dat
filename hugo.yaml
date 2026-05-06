@@ -3,6 +3,9 @@ languageCode: en-us
 title: vah
 theme: paper-mod
 
+ignoreFiles:
+  - posts/overthewire/natas/python/\.venv(/|$)
+
 outputs:
   home:
     - HTML

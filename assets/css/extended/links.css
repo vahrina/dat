@@ -11,8 +11,34 @@
   opacity: 1;
 }
 
+/* anchors in headers */
+.post-content :is(h1, h2, h3, h4, h5, h6) > a {
+  box-shadow: none;
+  opacity: .5;
+  transition: var(--transition);
+}
+
+.post-content :is(h1, h2, h3, h4, h5, h6) > a:hover {
+  opacity: 1;
+  color: var(--pastel-bg);
+  transform: translateY(-0.04em);
+}
+
+/* clickable links */
+#top>main>article>div>p>a {
+  box-shadow: none;
+  opacity: .5;
+  transition: var(--transition);
+}
+
+#top>main>article>div>p>a:hover {
+  opacity: 1;
+  color: var(--pastel-bg);
+  transform: translateY(-0.04em);
+}
+
 /* underline all clickable dir/files & links when hovered 
-* :where(.back-link a, nav #menu span, header.header .logo a.logo-link, .section a):hover */
+:where(.back-link a, nav #menu span, header.header .logo a.logo-link, .section a):hover */
 :where(.back-link a, nav #menu span):hover {
   text-decoration: underline;
   cursor: copy;

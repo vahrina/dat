@@ -4,14 +4,15 @@ description: cli enthusiasts love this one
 draft: false
 title: natas-1
 weight: 2
-ShowToc: false
 ---
 
-| info | value |
-|:-----|------:|
-| user | `natas1` |
-| pass | `0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq` |
+| info | value                                    |
+|:-----|-----------------------------------------:|
+| user | `natas1`                                 |
+| pass | `0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq`       |
 | host | `http://natas1.natas.labs.overthewire.org` |
+
+---
 
 ### explanation
 
@@ -32,17 +33,17 @@ the initial challenge wants you to open the source code via a shortcut as indica
 </div>
 ```
 
-we have plenty of ways to open dev tools, just to name a few
+we have plenty of ways to open dev tools, to name a few:
 
-| shortcut          | explanation                   |
-|:------------------|------------------------------:|
-| `<ctrl-shift-i>`  | dev tools (last tab)          |
-| `<ctrl-shift-j>`  | console                       |
-| `<ctrl-u>`        | view page source              |
-| `<f12>`           | dev tools (universal)         |
-| `<ctrl-shift-c>`  | dev tools (inspect element)   |
+| shortcut          | explanation |
+|-------------------|------------:|
+| `<ctrl-u>`        | source      |
+| `<f12`            | dev tools   |
+| `<ctrl-shift-i>`  | ^ last tab  |
+| `<ctrl-shift-j>`  | console     |
+| `<ctrl-shift-c>`  | inspect     |
 
-for our matter, just curling it will be more than sufficient to expose the comment from the source doc
+for our matter, curling it will be more than sufficient to expose the comment from the document
 
 ```html
 <!-- The password for natas2 is TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI -->

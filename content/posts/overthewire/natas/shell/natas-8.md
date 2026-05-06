@@ -4,7 +4,6 @@ description: encoding != encryption
 draft: false
 title: natas-8
 weight: 9
-ShowToc: false
 ---
 
 | info | value                                      |
@@ -12,6 +11,8 @@ ShowToc: false
 | user | `natas8`                                   |
 | pass | `xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q`         |
 | host | `http://natas8.natas.labs.overthewire.org` |
+
+---
 
 ## explanation
 

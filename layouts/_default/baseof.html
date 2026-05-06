@@ -19,5 +19,41 @@
       {{- partial "search_modal.html" . -}}
       {{- partial "help_modal.html" . -}}
       {{- partial "shortcuts.html" . -}}
+      <script>
+      // transition for all summary blocks
+      document.querySelectorAll('details').forEach(details => {
+        const summary = details.querySelector('summary');
+        const body = details.querySelector('summary + *');
+        const DUR_IN = 500;
+        const DUR_OUT = 270;
+        const EASE = 'cubic-bezier(.51,.19,.45,.92)';
+        summary.addEventListener('click', e => {
+          e.preventDefault();
+
+          if (details.open) {
+            body.animate([{ height: body.offsetHeight + 'px', opacity: 1 }, { height: '0px', opacity: 0 }], { duration: DUR_OUT, easing: EASE })
+            .onfinish = () => {
+              details.removeAttribute('open');
+              details.style.height = '';
+              details.style.opacity = '';
+            }
+          } else {
+            details.setAttribute('open', '');
+            const h = body.offsetHeight;
+            body.animate([{ height: '0px', opacity: 0 }, { height: h + 'px', opacity: 1 }], { duration: DUR_IN, easing: EASE });
+          }
+        });
+      });
+
+      // open all clickable href links in a new tab
+      document.querySelectorAll('a[href]').forEach(a => {
+        if (a.hostname !== location.hostname) {
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+        }
+      });
+      </script>
     </body>
   </html>
+</body>
+</html>

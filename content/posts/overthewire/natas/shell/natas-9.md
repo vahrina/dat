@@ -4,7 +4,6 @@ description: unqouted input is code
 draft: false
 title: natas-9
 weight: 10
-ShowToc: false
 ---
 
 | info | value                                      |
@@ -12,6 +11,8 @@ ShowToc: false
 | user | `natas9`                                   |
 | pass | `ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t`         |
 | host | `http://natas9.natas.labs.overthewire.org` |
+
+---
 
 ## explanation
 

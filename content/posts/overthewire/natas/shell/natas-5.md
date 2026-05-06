@@ -4,7 +4,6 @@ description: have you tried it with milk?
 draft: false
 title: natas-5
 weight: 6
-ShowToc: false
 ---
 
 | info | value |
@@ -13,7 +12,9 @@ ShowToc: false
 | pass | `0n35PkggAPm2zbEpOU802c0x0Msn1ToK` |
 | host | `http://natas5.natas.labs.overthewire.org` |
 
-### explanation
+---
+
+## explanation
 hmm seems like we have no info to go off other than we are not logged in
 
 ```html

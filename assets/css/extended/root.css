@@ -48,6 +48,7 @@
 html {
   font-family: var(--font);
   letter-spacing: 1px;
+  background: #2E2E33 !important;
 }
 
 *,

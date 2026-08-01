@@ -30,7 +30,7 @@ this logically includes:
 
 > the list could go on forever: house upgrades, memories, horses tamed and so on
 
-and yes, it was very boring & dry at times, especially mapping out every korok twice after not finding the last 5 koroks although the map had them all checked off :) but why would i do commit to such a *useless* achievement - especially without the nostalgia bias of growing up with zelda - anyway?
+and yes, it was very boring & dry at times, especially mapping out every korok twice after not finding the last 5 koroks although the map had them all checked off :) but why would i commit to such a *useless* achievement - especially without the nostalgia bias of growing up with zelda - anyway?
 
 welllllll unfortunately i cannot find the original post anymore, but for one, i was simply doing it for the completion. no goal in mind at all. after coming across some tips & tricks - especially complaints about there being too many for what you get in return, sigh... - there was one person elaborating that anyone trying to do it for mere completion is taking the wrong approach
 

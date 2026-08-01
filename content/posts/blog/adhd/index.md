@@ -17,7 +17,7 @@ this logically includes:
   - amiibo: 23 (had to cut some ties due to limited inv capacity)
 - photo of every unique item/mob/ore/misc you name it
   - base: 385
-  - dlc: 394
+  - dlc: 9
 - quests
   - base
     - main: 15

@@ -40,16 +40,19 @@ params:
       *no ads, no tracking*
 
   socialIcons:
-    - name: steam
-      url: 'https://steamcommunity.com/id/hanf'
-      tooltip: id/hanf
+    # - name: steam
+    #   url: 'https://steamcommunity.com/id/hanf'
+    #   tooltip: id/hanf
 
     - name: github
       url: 'https://github.com/vahrina'
       tooltip: vahrina
 
-    - name: portfolio
-      url: 'https://who.vah.wtf'
+    # - name: portfolio
+    #   url: 'https://who.vah.wtf'
+
+    - name: pgpkey
+      url: https://keys.openpgp.org/search?q=cbcf+3339+936e+e5f0+cfeb+4502+88f9+f7da+f117+b322
 
 markup:
   highlight:

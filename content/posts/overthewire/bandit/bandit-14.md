@@ -52,7 +52,7 @@ a shell script? a binary? tl;dr no clue! D:
 although the service is invisible to `ss`, `netstat`, `systemctl`; `/proc/net/tcp` etc. pp. from inside the shell (meaning the listener runs in a separate, isolated namespace), tracing the connection gives some insight to the tcp handshake, followed by the validation upon input
 
 ```sh
- strace -f -e trace=network nc localhost 30000 <<< "aaWecNkG4FhxJQxz07uiwzVP6bJiYS65"
+strace -f -e trace=network nc localhost 30000 <<< "aaWecNkG4FhxJQxz07uiwzVP6bJiYS65"
 socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
 connect(3, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
 socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 3
@@ -78,7 +78,7 @@ Wrong! Please enter the correct current password.
 +++ exited with 0 +++
 ```
 
-additionally, a sub ~5ms response time strongly suggests that there is a daemon running, so it would rule a fork/exec-per-connection wrapper - indicated by the following latency probe
+additionally, a sub ~5ms response time strongly suggests that there is a daemon running, so it would rule out a fork/exec-per-connection wrapper - indicated by the following latency probe
 
 ```sh
 for i in {1..5}; do time (printf 'test\n' | nc localhost 30000); done

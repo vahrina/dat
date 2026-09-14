@@ -1,6 +1,6 @@
 ---
 date: '2026-09-14'
-description: ssh, or, how i like to call it 🤫
+description: ssh, or, how i like to call it, 🤫
 draft: false
 title: bandit-13
 weight: 14

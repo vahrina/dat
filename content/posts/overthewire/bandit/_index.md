@@ -9,6 +9,8 @@ used to hate the shell & avoided whenever i can, but forcing myself to use i/o o
 
 every [bandit level](https://overthewire.org/wargames/bandit/) concludes of a hint, helpful commands & reading material. although i'll include it, all credit goes to [otw](https://overthewire.org/)
 
+i'll mostly comment out the stuff that came back from the server's side - so it's easier to distinguish between in- & output
+
 ---
 
 ### helpful stuff before beginning

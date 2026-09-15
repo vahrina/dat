@@ -65,4 +65,4 @@ ssh bandit18@bandit cat readme
 KpsOfPkcP7i1FlIExk2QEjyt6dw8dxZI
 ```
 
-if you're curious enough, try to launch vim with ssh to get an interactive shell :)
+if you're curious enough, append vim to ssh & try to get an interactive shell :)

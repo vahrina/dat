@@ -69,7 +69,7 @@ the sticky bit `t` in the others category is set, which means:
 - 7 (group): grants the group rwx perms
 - 3 (other): grants other users wx perms
 
-butttt hashes are deterministic: the same input produces the same output, e.g. `cat | md5sum` will always yield `54b8617eca0e54c7d3c8e6732c6b687a` plus trailing dash
+butttt hashes are deterministic: the same input produces the same output, e.g. `echo cat | md5sum` will always yield `54b8617eca0e54c7d3c8e6732c6b687a` plus trailing dash
 
 and because the script reveals the logic, we could just uhhhh
 

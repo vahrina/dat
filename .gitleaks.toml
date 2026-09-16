@@ -1,0 +1,4 @@
+[allowlist]
+paths = [
+  '''content/posts/overthewire/*.md''',
+]

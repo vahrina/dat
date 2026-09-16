@@ -3,22 +3,25 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   color: gray;
+  border: none;
 }
 
-.toc details {
+details {
+  color: #808080;
   transition: var(--transition);
 }
 
-.toc:hover {
-  color: white;
+details:hover {
+  color: white; /* change to #fffeee at some point */
+  cursor: zoom-in;
 }
 
-.toc details>summary::marker {
-  content: "#";
+details>summary::marker {
+  content: "# ";
   text-align: left;
 }
 
-.toc details>summary {
+details>summary {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }

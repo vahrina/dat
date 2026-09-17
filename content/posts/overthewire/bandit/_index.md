@@ -15,9 +15,10 @@ i'll mostly comment out the stuff that came back from the server's side - so it'
 
 ### helpful stuff before beginning
 
-because the host:port stays the same, i encourage you to save it to your [ssh config](https://linux.die.net/man/5/ssh_config). unlike the [natas](https://dat.vah.wtf/posts/overthewire/natas/shell/) levels, i will not provide the host in every table
+because the host:port stays the same, i encourage you to save it to your [ssh config](https://linux.die.net/man/5/ssh_config). unlike the [natas](https://dat.vah.wtf/posts/overthewire/natas/shell/) levels, i will not provide the host in every table as per usual
 
 ```sh
+# ~/.ssh/config
 Host bandit
     HostName bandit.labs.overthewire.org
     Port 2220

@@ -148,3 +148,42 @@ inside `vi`, we can bring up vim's built-in commands by hitting `:` which leads 
 ```
 
 not that the password is any beneficial (it wont fix the wrong shell, surprise surprise :D), move onto [bandit-26](https://dat.vah.wtf/posts/overthewire/bandit/bandit-26/) since this seems to be done for the level - i would've included the rest for completion in here but oh well
+
+<details>
+  <summary>fun story about the description for this level</summary>
+
+i'm usually someone that starts chronologically, but [natas](https://dat.vah.wtf/posts/overthewire/natas/) really caught my attention before denoting the bandit writeups & i still stand to the point of no ai usage - mentioned in natas - during this whole writeup (obviously fact checking rarely to make sure the interpretation sits right)
+
+after my mind has been boggled for over 30 minutes, trying to come up with a description for this level specifically, i figured: lets give the wizards in the tin can a shot, prompt as follows:
+
+```txt
+what could be a nice desscription for this level? i like playful descriptions like look at my other levels how i used descriptions
+
+```md
+date: '2026-09-16'
+draft: false
+description:
+title: bandit-26
+weight: 27
+
+date: '2026-09-15'
+description: daemon? demon? dodge srt?!
+draft: false
+title: bandit-24
+weight: 25
+
+date: '2026-09-15'
+description: i take it back, screw (cron) j*bs
+draft: false
+title: bandit-23
+weight: 24
+``` \ (escaped because formatting would break)
+```
+
+so yea, the one time seeking inspiration has gone horribly wrong haha
+
+![ ](../img/ai-suggests-to-off-myself.jpeg#center)
+
+two days after uploading this, i'm still shocked lmao i don't know why or how - does anyone even put safe guards on these..?
+
+</details>

@@ -147,4 +147,4 @@ inside `vi`, we can bring up vim's built-in commands by hitting `:` which leads 
 # jHdv2ELQhT22BkprMNDjybZDAkw1zeBJ
 ```
 
-not that the password is any beneficial (it wont fix the wrong shell, surprise surprise :D), move onto [bandit-27](https://dat.vah.wtf/posts/overthewire/bandit/bandit-27/) since this seems to be done for the level - i would've included the rest for completion in here but oh well
+not that the password is any beneficial (it wont fix the wrong shell, surprise surprise :D), move onto [bandit-26](https://dat.vah.wtf/posts/overthewire/bandit/bandit-26/) since this seems to be done for the level - i would've included the rest for completion in here but oh well

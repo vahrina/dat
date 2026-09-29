@@ -9,7 +9,7 @@ weight: 4
 | info | value                                      |
 |:-----|-------------------------------------------:|
 | user | `natas3`                                   |
-| pass | `3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH`         |
+| pass | `K30JrSRHzjxq3paUQuwozY4MNvmNFyhI`         |
 | host | `http://natas3.natas.labs.overthewire.org` |
 
 ---
@@ -28,7 +28,7 @@ without further ado, check out `robots.txt` for anything useful
 
 ```sh
 curl http://natas3.natas.labs.overthewire.org/robots.txt \
--u natas3:3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH
+-u natas3:K30JrSRHzjxq3paUQuwozY4MNvmNFyhI
 ```
 
 which returns
@@ -42,13 +42,13 @@ may as well check out what `/s3cr3t/` is hiding from us
 
 ```sh
 curl http://natas3.natas.labs.overthewire.org/s3cr3t/ \
--u natas3:3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH
+-u natas3:K30JrSRHzjxq3paUQuwozY4MNvmNFyhI
 ```
 
 another directory exposed to leave sensitive data, yet again we discover a `users.txt` file
 containing the next login data
 
 ```sh
-natas4:QryZXc2e0zahULdHrtHxzyYkj59kUxLQ
+natas4:JDrPnuZAKyl6MkiqQGFIddrqpvgOASth
 ```
 

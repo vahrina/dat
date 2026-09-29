@@ -9,7 +9,7 @@ weight: 7
 | info | value                                      |
 |:-----|--------------------------------------------|
 | user | `natas6`                                   |
-| pass | `0RoJwHdSKWFTYR5WuiAewauSuNaBXned`         |
+| pass | `7mhjtShJAcld2NYbKHEadnhEwRn2P8VT`         |
 | host | `http://natas6.natas.labs.overthewire.org` |
 
 ---
@@ -39,7 +39,7 @@ unless you want to fight [sed](https://en.wikipedia.org/wiki/Sed) (good regex pr
 
 ```sh
 curl http://natas6.natas.labs.overthewire.org/index-source.html \
--u natas6:0RoJwHdSKWFTYR5WuiAewauSuNaBXned \
+-u natas6:7mhjtShJAcld2NYbKHEadnhEwRn2P8VT \
 | sed -nE '                 # -n: print only explicit matches, -E: extended regex
   /<code>/,/<\/code>/{      # operate only inside <code>...</code> block
   s/<\/?span[^>]*>//g       # remove <span> tags
@@ -70,7 +70,7 @@ navigate to it and find the password, then submit the post request with the `-d`
 
 ```sh
 curl http://natas6.natas.labs.overthewire.org/ \
--u natas6:0RoJwHdSKWFTYR5WuiAewauSuNaBXned \
+-u natas6:7mhjtShJAcld2NYbKHEadnhEwRn2P8VT \
 -d "secret=FOEIUWGHFEEUHOFUOIU&submit=submit"
 ```
 
@@ -78,5 +78,5 @@ after successfully submitting the post request via the two parameters `name=secr
 
 ```html
 <div id="content">
-    Access granted. The password for natas7 is bmg8SvU1LizuWjx3y7xkNERkHxGre0GS
+    Access granted. The password for natas7 is B1szg95UcTnrzwnF3i3TzYHlyYh8iBV0
 ```

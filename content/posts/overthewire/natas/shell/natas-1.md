@@ -9,7 +9,7 @@ weight: 2
 | info | value                                    |
 |:-----|-----------------------------------------:|
 | user | `natas1`                                 |
-| pass | `0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq`       |
+| pass | `scfWG6qNEIdzqVyfRwEGXyNUfFZkZeQ7`       |
 | host | `http://natas1.natas.labs.overthewire.org` |
 
 ---
@@ -20,7 +20,7 @@ simply change the username, host & password respectively
 
 ```sh
 curl http://natas1.natas.labs.overthewire.org \
--u natas1:0nzCigAq7t2iALyvU9xcHlYN4MlkIwlq
+-u natas1:scfWG6qNEIdzqVyfRwEGXyNUfFZkZeQ7
 ```
 
 yet again we can directly spot the password by reading the source code of the document, even if
@@ -46,5 +46,5 @@ we have plenty of ways to open dev tools, to name a few:
 for our matter, curling it will be more than sufficient to expose the comment from the document
 
 ```html
-<!-- The password for natas2 is TguMNxKo1DSa1tujBLuZJnDUlCcUAPlI -->
+<!-- The password for natas2 is vsDOxoXyq3wckCP1ZmTZ71ngIA606odB -->
 ```

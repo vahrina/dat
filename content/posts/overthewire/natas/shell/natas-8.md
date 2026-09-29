@@ -9,7 +9,7 @@ weight: 9
 | info | value                                      |
 |:-----|-------------------------------------------:|
 | user | `natas8`                                   |
-| pass | `xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q`         |
+| pass | `ugXL95KQmUAJJj6bMezOlBNDyI9Imwkc`         |
 | host | `http://natas8.natas.labs.overthewire.org` |
 
 ---
@@ -69,11 +69,11 @@ now we only need to submit it into the previously mentioned input form with the 
 
 ```sh
 curl http://natas8.natas.labs.overthewire.org \
--u natas8:xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q \
+-u natas8:ugXL95KQmUAJJj6bMezOlBNDyI9Imwkc \
 -d "secret=oubWYf2kBq&submit="
 ```
 
 ```html
 <div id="content">
-Access granted. The password for natas9 is ZE1ck82lmdGIoErlhQgWND6j2Wzz6b6t
+Access granted. The password for natas9 is UdxmI27dTaXmnd1rxKQTfws6jihTdcQ9
 ```

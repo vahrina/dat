@@ -9,7 +9,7 @@ weight: 8
 | info | value                                      |
 |:-----|-------------------------------------------:|
 | user | `natas7`                                   |
-| pass | `bmg8SvU1LizuWjx3y7xkNERkHxGre0GS`         |
+| pass | `B1szg95UcTnrzwnF3i3TzYHlyYh8iBV0`         |
 | host | `http://natas7.natas.labs.overthewire.org` |
 
 ---
@@ -28,7 +28,7 @@ considering those links index pages that are being served for the user from a se
 
 ```sh
 curl http://natas7.natas.labs.overthewire.org/index.php\?page\=/etc/natas_webpass/natas8 \
--u natas7:bmg8SvU1LizuWjx3y7xkNERkHxGre0GS
+-u natas7:B1szg95UcTnrzwnF3i3TzYHlyYh8iBV0
 ```
 
 the expected output contains the password for natas8
@@ -36,6 +36,6 @@ the expected output contains the password for natas8
 ```html
 <a href="index.php?page=home">Home</a>
 <a href="index.php?page=about">About</a>
-xcoXLmzMkoIP9D7hlgPlh9XD7OgLAe5Q
+ugXL95KQmUAJJj6bMezOlBNDyI9Imwkc
 <!-- hint: password for webuser natas8 is in /etc/natas_webpass/natas8 -->
 ```

@@ -29,3 +29,35 @@
   margin: 0;
   border-radius: 0;
 }
+
+.natas-source-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.natas-source-item {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.natas-source-summary {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.48rem 1rem;
+  cursor: copy;
+  background: var(--entry);
+  border: none;
+}
+
+.natas-source-item[open] .natas-source-summary {
+  border-bottom: none;
+}
+
+.natas-source-body .code-block-wrap {
+  margin: 0;
+  border-radius: 0;
+}

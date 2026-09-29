@@ -1,0 +1,32 @@
+{{- $base := "assets/natas/source" -}}
+{{- $filter := strings.TrimSpace (default "" (.Get "dir")) -}}
+{{- $hlOpts := dict "lineNos" "table" "noClasses" false -}}
+{{- $items := slice -}}
+{{- range (readDir $base) -}}
+{{- $name := .Name -}}
+{{- if and (not .IsDir) (strings.HasSuffix $name ".html") -}}
+{{- with findRESubmatch `^natas(\d+)` $name 1 -}}
+{{- $items = $items | append (dict "n" (int (index . 0 1)) "name" $name) -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+<div class="natas-source-list">
+  {{- range sort $items "n" -}}
+  {{- if or (eq $filter "") (eq $filter (printf "natas%d" .n)) -}}
+  {{- $raw := readFile (printf "%s/%s" $base .name) | chomp -}}
+  <details class="natas-source-item" id="natas-{{ .n }}">
+    <summary class="natas-source-summary">
+      <span class="natas-source-heading">natas {{ .n }}</span>
+    </summary>
+    <div class="natas-source-body">
+      <div class="code-block-wrap">
+        <div class="code-block-header">
+          <span class="code-block-lang">html</span>
+        </div>
+        <div class="code-block-inner">{{- transform.Highlight $raw "html" $hlOpts | safeHTML -}}</div>
+      </div>
+    </div>
+  </details>
+  {{- end -}}
+  {{- end -}}
+</div>

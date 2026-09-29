@@ -72,7 +72,7 @@ menu:
       url: 'https://github.com/vahrina/dat'
       weight: 2
 
-    - name: log/
+    - name: search/
       url: /search/
       weight: 3
 

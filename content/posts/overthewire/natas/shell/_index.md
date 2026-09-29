@@ -18,7 +18,7 @@ to furthermore strengthen my awful frustration tolerance caused by ai, i will tr
 
 typing out the user/host info every post may seem repetitive & unnecessary at most, but it's good to keep track of what you have, basically like solving a recursion task: break a big problem into sub problems
 
-lastly, i will optionally refactor provided source codes to suit my own clarity & leave the original, untouched ones in an extra directory [source](./source/)
+lastly, i will optionally refactor provided source codes to suit my own clarity & leave the original, untouched ones in the [source](./source/) directory
 
 ---
 

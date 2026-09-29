@@ -10,15 +10,15 @@
 {{- end -}}
 {{- end -}}
 {{- end -}}
-<div class="natas-source-list">
+<div class="natas-list">
   {{- range sort $items "n" -}}
   {{- if or (eq $filter "") (eq $filter (printf "natas%d" .n)) -}}
   {{- $raw := readFile (printf "%s/%s" $base .name) | chomp -}}
-  <details class="natas-source-item" id="natas-{{ .n }}">
-    <summary class="natas-source-summary">
-      <span class="natas-source-heading">natas {{ .n }}</span>
+  <details class="natas-item" id="natas-{{ .n }}">
+    <summary class="natas-summary">
+      <span class="natas-heading">natas {{ .n }}</span>
     </summary>
-    <div class="natas-source-body">
+    <div class="natas-body">
       <div class="code-block-wrap">
         <div class="code-block-header">
           <span class="code-block-lang">html</span>

@@ -1,7 +1,7 @@
 {{- $base := "content/posts/overthewire/natas/python" -}}
 {{- $filter := strings.TrimSpace (default "" (.Get "dir")) -}}
 {{- $hlOpts := dict "lineNos" "table" "noClasses" false -}}
-<div class="natas-py-list">
+<div class="natas-list">
   {{- range (readDir $base) -}}
   {{- $dirName := .Name -}}
   {{- if and .IsDir (strings.HasPrefix $dirName "natas-") -}}
@@ -13,9 +13,9 @@
   {{- $raw := readFile $path | chomp -}}
   {{- $id := anchorize (printf "%s %s" $dirName (strings.TrimSuffix ".py" $f)) -}}
   {{- $heading := lower (replace $dirName "-" " ") -}}
-  <details class="natas-py-item" id="{{ $id }}">
-    <summary class="natas-py-summary">
-      <span class="natas-py-heading">{{ $heading }}</span>
+  <details class="natas-item" id="{{ $id }}">
+    <summary class="natas-summary">
+      <span class="natas-heading">{{ $heading }}</span>
     </summary>
     <div class="natas-py-body">
       <div class="code-block-wrap">

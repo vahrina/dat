@@ -39,6 +39,11 @@ details>summary {
   padding-bottom: 0.5rem;
 }
 
+summary:not(.toc summary, .natas-summary) {
+  border-bottom: 2px solid var(--tertiary);
+  margin-bottom: .5rem;
+}
+
 details[open] {
   border-bottom: 2px dashed var(--tertiary);
 }
@@ -48,8 +53,7 @@ details[open] summary {
   cursor: zoom-out;
 }
 
-summary:not(.toc summary, .natas-summary) {
-  border-bottom: 2px solid var(--tertiary);
+details:not(.toc details) {
   margin-bottom: .5rem;
 }
 

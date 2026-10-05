@@ -19,6 +19,7 @@
   --selection-bg: rgba(160, 154, 188, .3);
 
   --grayed-out: 0.5;
+  --soft-white: #fffeee;
 }
 
 :root {
@@ -64,4 +65,9 @@ body {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+::selection {
+  background-color: var(--pastel);
+  text-decoration: seagreen wavy underline;
 }

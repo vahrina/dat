@@ -66,7 +66,7 @@ body.has-vimbar #top-link {
 
 .vimbar-time:hover {
   cursor: copy;
-  color: white;
+  color: var(--soft-white);
 }
 
 .vimbar-scroll {

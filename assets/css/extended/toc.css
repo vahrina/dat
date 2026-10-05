@@ -1,3 +1,4 @@
+/* table of content related stuff found at the start of a post */
 .toc {
   text-transform: lowercase;
   border-radius: var(--radius-md);
@@ -6,13 +7,25 @@
   border: none;
 }
 
+.toc li::marker {
+  content: "~ ";
+}
+
+.toc summary, .toc details[open] {
+  border: none;
+}
+
+/* every other style should apply to both toc & all <details> & <summary> elements */
 details {
   color: #808080;
   transition: var(--transition);
 }
 
 details:hover {
-  color: white; /* change to #fffeee at some point */
+  color: var(--soft-white);
+}
+
+details:not([open]) {
   cursor: zoom-in;
 }
 
@@ -26,12 +39,18 @@ details>summary {
   padding-bottom: 0.5rem;
 }
 
-.toc li::marker {
-  content: "~ ";
+details[open] {
+  border-bottom: 2px dashed var(--tertiary);
 }
 
 details[open] summary {
+  border-bottom: 2px dashed var(--tertiary);
+  cursor: zoom-out;
+}
+
+summary:not(.toc summary) {
   border-bottom: 2px solid var(--tertiary);
+  margin-bottom: .5rem;
 }
 
 /* arrow */

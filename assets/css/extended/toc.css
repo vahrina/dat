@@ -11,7 +11,7 @@
   content: "~ ";
 }
 
-.toc summary, .toc details[open] {
+.toc summary, .toc details[open], .natas-item[open] {
   border: none;
 }
 
@@ -48,7 +48,7 @@ details[open] summary {
   cursor: zoom-out;
 }
 
-summary:not(.toc summary) {
+summary:not(.toc summary, .natas-summary) {
   border-bottom: 2px solid var(--tertiary);
   margin-bottom: .5rem;
 }

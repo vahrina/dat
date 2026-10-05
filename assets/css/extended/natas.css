@@ -16,13 +16,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0.48rem 1rem;
-  cursor: copy;
+  cursor: zoom-in;
   background: var(--entry);
   border: none;
 }
 
 .natas-item[open] .natas-summary {
   border-bottom: none;
+  border: none;
 }
 
 .natas-body .code-block-wrap {

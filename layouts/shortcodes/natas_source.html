@@ -5,7 +5,7 @@
 {{- range (readDir $base) -}}
 {{- $name := .Name -}}
 {{- if and (not .IsDir) (strings.HasSuffix $name ".html") -}}
-{{- with findRESubmatch `^natas(\d+)` $name 1 -}}
+{{- with findRESubmatch `^natas-?(\d+)` $name 1 -}}
 {{- $items = $items | append (dict "n" (int (index . 0 1)) "name" $name) -}}
 {{- end -}}
 {{- end -}}

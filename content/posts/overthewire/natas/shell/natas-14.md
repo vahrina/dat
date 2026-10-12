@@ -105,7 +105,7 @@ the answer to our prayers lies in escaping out of the query, basically controlli
 
 > reading through the above article helped me solve the puzzle, i recommend skimming through it
 
-as shown above, the output is `username="" and password=""`, adding a single quote somewhat already begins to break it (which in terms of sql is a good sign that it is working!)
+as shown above, the output is `username="" and password=""`, adding a single quote somewhat already begins to break it (which in terms of a sql vulnerability, is a good sign that it is working!)
 
 ```sh
 curl ... \

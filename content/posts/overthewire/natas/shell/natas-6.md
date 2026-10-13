@@ -6,10 +6,10 @@ title: natas-6
 weight: 7
 ---
 
-| info | value                                      |
-|:-----|--------------------------------------------|
-| user | `natas6`                                   |
-| pass | `7mhjtShJAcld2NYbKHEadnhEwRn2P8VT`         |
+| info | value |
+|:--|:--|
+| user | `natas6` |
+| pass | `7mhjtShJAcld2NYbKHEadnhEwRn2P8VT` |
 | host | `http://natas6.natas.labs.overthewire.org` |
 
 ---

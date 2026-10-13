@@ -6,10 +6,10 @@ title: bandit-2
 weight: 3
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `bandit2`                                   |
-| pass | `PK8fYLZg2hnHSz83plBL1iEPKdD3QToB`                                   |
+| info | value |
+|:--|:--|
+| user | `bandit2` |
+| pass | `PK8fYLZg2hnHSz83plBL1iEPKdD3QToB` |
 
 > The password for the next level is stored in a file called --spaces in this filename-- located in the home directory
 

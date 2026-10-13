@@ -6,10 +6,10 @@ title: bandit-7
 weight: 8
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `bandit7`                                   |
-| pass | `Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3`                                   |
+| info | value |
+|:--|:--|
+| user | `bandit7` |
+| pass | `Bmnnvf82KzQlfxgAI2d1zYbr1u9pr3E3` |
 
 > The password for the next level is stored in the file data.txt next to the word millionth
 

@@ -6,10 +6,10 @@ title: bandit-8
 weight: 9
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `bandit8`                                   |
-| pass | `EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl`                                   |
+| info | value |
+|:--|:--|
+| user | `bandit8` |
+| pass | `EjmOSvuAu7sGAHqHVcBDPirRe9T03kxl` |
 
 > The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
 

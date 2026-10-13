@@ -7,7 +7,7 @@ weight: 6
 ---
 
 | info | value |
-|:-----|------:|
+|:--|:--|
 | user | `natas5` |
 | pass | `e4z2Noy3oqwPJUWzJH0dseN67Cn1sy2M` |
 | host | `http://natas5.natas.labs.overthewire.org` |

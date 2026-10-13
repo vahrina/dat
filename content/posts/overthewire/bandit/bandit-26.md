@@ -6,10 +6,10 @@ title: bandit-26
 weight: 27
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `bandit26`                                   |
-| pass | `jHdv2ELQhT22BkprMNDjybZDAkw1zeBJ`         |
+| info | value |
+|:--|:--|
+| user | `bandit26` |
+| pass | `jHdv2ELQhT22BkprMNDjybZDAkw1zeBJ` |
 
 > Good job getting a shell! Now hurry and grab the password for bandit27!
 

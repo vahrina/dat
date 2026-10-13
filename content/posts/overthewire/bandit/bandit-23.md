@@ -6,10 +6,10 @@ title: bandit-23
 weight: 24
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `bandit23`                                   |
-| pass | `gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw`         |
+| info | value |
+|:--|:--|
+| user | `bandit23` |
+| pass | `gKXDTAXnIz3OBxiPjRZ2uqutUlPZrBsw` |
 
 > A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.
 

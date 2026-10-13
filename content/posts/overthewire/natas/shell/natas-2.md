@@ -6,10 +6,10 @@ title: natas-2
 weight: 3
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `natas2`                                   |
-| pass | `vsDOxoXyq3wckCP1ZmTZ71ngIA606odB`         |
+| info | value |
+|:--|:--|
+| user | `natas2` |
+| pass | `vsDOxoXyq3wckCP1ZmTZ71ngIA606odB` |
 | host | `http://natas2.natas.labs.overthewire.org` |
 
 ---

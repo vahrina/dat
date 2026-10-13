@@ -6,10 +6,10 @@ title: bandit-15
 weight: 16
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `bandit15`                                   |
-| pass | `pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7`         |
+| info | value |
+|:--|:--|
+| user | `bandit15` |
+| pass | `pbLYuZtTg4MgaqfJx8jbA9gKKGqM68A7` |
 
 > The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL/TLS encryption.
 

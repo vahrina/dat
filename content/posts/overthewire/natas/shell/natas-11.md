@@ -8,7 +8,7 @@ ShowToc: false
 ---
 
 | info | value                                       |
-|:-----|--------------------------------------------:|
+|:--|:--|
 | user | `natas11`                                   |
 | pass | `VUMQDmuITOEHzhviLE5V0VG9cPMQkyxd`          |
 | host | `http://natas11.natas.labs.overthewire.org` |
@@ -215,11 +215,11 @@ The password for natas12 is EAGkE8uzFTxeoTT2mMst9Xy7PX6guEng
 firstly, xor is like an upgraded logical "or" operation, where if both bits differ, it becomes 1, else 0
 
 | a | b | a ^ b |
-|---|---|:-----:|
-| 0 | 0 | 0     |
-| 0 | 1 | 1     |
-| 1 | 0 | 1     |
-| 1 | 1 | 0     |
+|---|---|:-:|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
 
 picture a message `m = 0110 1001 (105)` with chosen key `k = 10 (2)`
 
@@ -263,12 +263,12 @@ to prove we can we reverse xor by knowing 2/3 parts, and because xor consists of
 
 source: [curl.se](https://curl.se/docs/http-cookies.html)
 
-| field      | value | meaning                     |
-|------------|:-----:|----------------------------:|
-| domain     | otw   | cookie scope                |
-| sub        | FALSE | include subdomains          |
-| path       | /     | valid url path              |
-| secure     | FALSE | https only                  |
-| expiry     | 0     | cookie persistance          |
-| name       | data  | cookie identifier           |
-| value      | ..%3D | cookie value                |
+| field | value | meaning |
+|---|:-:|--:|
+| domain | otw | cookie scope |
+| sub | FALSE | include subdomains |
+| path | / | valid url path |
+| secure | FALSE | https only |
+| expiry | 0 | cookie persistance |
+| name | data | cookie identifier |
+| value | ..%3D | cookie value |

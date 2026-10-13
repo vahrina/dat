@@ -6,10 +6,10 @@ title: natas-1
 weight: 2
 ---
 
-| info | value                                    |
-|:-----|-----------------------------------------:|
-| user | `natas1`                                 |
-| pass | `scfWG6qNEIdzqVyfRwEGXyNUfFZkZeQ7`       |
+| info | value |
+|:--|:--|
+| user | `natas1` |
+| pass | `scfWG6qNEIdzqVyfRwEGXyNUfFZkZeQ7` |
 | host | `http://natas1.natas.labs.overthewire.org` |
 
 ---
@@ -35,13 +35,13 @@ the initial challenge wants you to open the source code via a shortcut as indica
 
 we have plenty of ways to open dev tools, to name a few:
 
-| shortcut          | explanation |
-|-------------------|------------:|
-| `<ctrl-u>`        | source      |
-| `<f12`            | dev tools   |
-| `<ctrl-shift-i>`  | ^ last tab  |
-| `<ctrl-shift-j>`  | console     |
-| `<ctrl-shift-c>`  | inspect     |
+| shortcut | explanation |
+|---|:--|
+| `<ctrl-u>` | source |
+| `<f12` | dev tools |
+| `<ctrl-shift-i>` | ^ last tab |
+| `<ctrl-shift-j>` | console |
+| `<ctrl-shift-c>` | inspect |
 
 for our matter, curling it will be more than sufficient to expose the comment from the document
 

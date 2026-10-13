@@ -6,10 +6,10 @@ title: natas-3
 weight: 4
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `natas3`                                   |
-| pass | `K30JrSRHzjxq3paUQuwozY4MNvmNFyhI`         |
+| info | value |
+|:--|:--|
+| user | `natas3` |
+| pass | `K30JrSRHzjxq3paUQuwozY4MNvmNFyhI` |
 | host | `http://natas3.natas.labs.overthewire.org` |
 
 ---

@@ -6,10 +6,10 @@ title: natas-7
 weight: 8
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `natas7`                                   |
-| pass | `B1szg95UcTnrzwnF3i3TzYHlyYh8iBV0`         |
+| info | value |
+|:--|:--|
+| user | `natas7` |
+| pass | `B1szg95UcTnrzwnF3i3TzYHlyYh8iBV0` |
 | host | `http://natas7.natas.labs.overthewire.org` |
 
 ---

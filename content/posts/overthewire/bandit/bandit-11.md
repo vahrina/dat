@@ -6,10 +6,10 @@ title: bandit-11
 weight: 12
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `bandit11`                                   |
-| pass | `pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro`         |
+| info | value |
+|:--|:--|
+| user | `bandit11` |
+| pass | `pYfOY6HwUsDj5rL9UvyhU7MCmv8vN5Ro` |
 
 > The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
 

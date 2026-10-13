@@ -6,10 +6,10 @@ title: bandit-4
 weight: 5
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `bandit4`                                   |
-| pass | `xzTXq1rDJQVVAzdv5cHq1TQytTWufAMq`                                   |
+| info | value |
+|:--|:--|
+| user | `bandit4` |
+| pass | `xzTXq1rDJQVVAzdv5cHq1TQytTWufAMq` |
 
 > The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
 

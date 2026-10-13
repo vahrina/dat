@@ -6,10 +6,10 @@ title: bandit-19
 weight: 20
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `bandit19`                                   |
-| pass | `KpsOfPkcP7i1FlIExk2QEjyt6dw8dxZI`         |
+| info | value |
+|:--|:--|
+| user | `bandit19` |
+| pass | `KpsOfPkcP7i1FlIExk2QEjyt6dw8dxZI` |
 
 > To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.
 

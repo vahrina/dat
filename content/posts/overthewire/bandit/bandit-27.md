@@ -6,10 +6,10 @@ title: bandit-27
 weight: 28
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `bandit27`                                   |
-| pass | `STJLJBRRphMxKB392CT4iOr5CbzPU9ER`         |
+| info | value |
+|:--|:--|
+| user | `bandit27` |
+| pass | `STJLJBRRphMxKB392CT4iOr5CbzPU9ER` |
 
 > There is a git repository at ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.
 

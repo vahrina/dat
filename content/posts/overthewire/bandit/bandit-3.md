@@ -6,10 +6,10 @@ title: bandit-3
 weight: 4
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `bandit3`                                   |
-| pass | `7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME`                                   |
+| info | value |
+|:--|:--|
+| user | `bandit3` |
+| pass | `7ZZ2LFrykP2zEyvBl4m3clcL7tGYJPME` |
 
 > The password for the next level is stored in a hidden file in the inhere directory.
 

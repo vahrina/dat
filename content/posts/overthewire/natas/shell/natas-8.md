@@ -6,10 +6,10 @@ title: natas-8
 weight: 9
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `natas8`                                   |
-| pass | `ugXL95KQmUAJJj6bMezOlBNDyI9Imwkc`         |
+| info | value |
+|:--|:--|
+| user | `natas8` |
+| pass | `ugXL95KQmUAJJj6bMezOlBNDyI9Imwkc` |
 | host | `http://natas8.natas.labs.overthewire.org` |
 
 ---

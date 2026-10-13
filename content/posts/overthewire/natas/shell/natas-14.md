@@ -7,10 +7,10 @@ weight: 15
 ShowToc: false
 ---
 
-| info | value                                       |
-|:-----|--------------------------------------------:|
-| user | `natas14`                                   |
-| pass | `A0xXu2x9FW8rb8OSQ4ei6n5VBbLUz8h8`          |
+| info | value |
+|:--|:--|
+| user | `natas14` |
+| pass | `A0xXu2x9FW8rb8OSQ4ei6n5VBbLUz8h8` |
 | host | `http://natas14.natas.labs.overthewire.org` |
 
 

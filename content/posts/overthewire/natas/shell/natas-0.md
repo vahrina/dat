@@ -6,10 +6,10 @@ title: natas-0
 weight: 1
 ---
 
-| info | value                                      |
-|:-----|-------------------------------------------:|
-| user | `natas0`                                   |
-| pass | `natas0`                                   |
+| info | value |
+|:--|:--|
+| user | `natas0` |
+| pass | `natas0` |
 | host | `http://natas0.natas.labs.overthewire.org` |
 
 ---

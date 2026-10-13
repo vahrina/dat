@@ -42,4 +42,4 @@ print(r.text)
 
 ---
 
-{{< natas_py >}}
+{{< natas >}}
